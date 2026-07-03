@@ -1,0 +1,1 @@
+{"ts":"2026-03-24T08:02:00Z","sources_checked":8,"changes_found":3,"changes_applied":3,"changes_skipped":0,"affected_skills":["skill-creator","check-claude-md"],"note":"advanced-features.mdにcontext:fork用フィールド9個追加、D4基準にformat追加、品質フィルタ問とPlan-Validate-Executeパターン追加"}

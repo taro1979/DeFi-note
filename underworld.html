@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rug - DeFi History Atlas</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap topbar">
+      <a class="brand" href="index.html">DeFi History Atlas</a>
+      <nav class="nav"><a href="index.html">概要</a><a href="timeline.html">年表</a><a href="categories.html">カテゴリ</a><a href="protocols.html">プロトコル</a><a class="active" href="underworld.html">Rug事例</a><a href="deep-research.html">深掘り</a><a href="research-method.html">調査方法</a><a href="sources.html">出典</a></nav>
+    </div>
+  </header>
+  <main class="wrap">
+      <section class="deep-section" aria-labelledby="underworldResearch">
+      <div class="section-title">
+        <h2 id="underworldResearch">Rug Deep Research</h2>
+        <p>高APR、匿名、フォーク、短命Farm、rugpull、設計破綻をRugリスクとして整理する。</p>
+      </div>
+      <div class="deep-grid">
+        <article class="deep-card">
+          <h3>Meerkat Finance: BSC Rugの開幕ベル</h3>
+          <p>2021年3月、BSC上で稼働直後のVaultから約3100万ドル相当が抜かれた。Rektの分析では、Vaultの実装がアップグレードされ、初期化関数と資金抜き取り関数が追加されたことが中心だった。重要なのは、これは外部攻撃というより、管理者権限とproxy upgradeがそのまま利用者資金への支配権だった点。</p>
+          <ul>
+            <li><b>見るべき痕跡:</b> proxy admin、upgradeTo、owner権限、未検証実装、timelock監視。</li>
+            <li><b>関連:</b> <a href="https://rekt.news/meerkat-finance-bsc-rekt" target="_blank" rel="noreferrer">Rekt Meerkat</a> / <a href="https://x.com/search?q=%22Meerkat%20Finance%22%20BSC%20rug&src=typed_query&f=live" target="_blank" rel="noreferrer">X検索</a></li>
+          </ul>
+        </article>
+        <article class="deep-card">
+          <h3>Compounder Finance: 監査済みでも内部者リスクは消えない</h3>
+          <p>Compounderは監査済みのVaultを掲げながら、監査後に悪意あるStrategyを差し込まれた。Rektは、timelockがあっても監視されていなければ防御にならず、監査は外部攻撃だけでなく内部者権限も明示すべきだと指摘している。Rug事例では「監査済み」「timelock」「burned keys」がマーケ文句として使われやすい。</p>
+          <ul>
+            <li><b>見るべき痕跡:</b> Strategy追加、Controller権限、timelock queue、監査後差分。</li>
+            <li><b>関連:</b> <a href="https://rekt.news/deathbed-confessions-c3pr" target="_blank" rel="noreferrer">Rekt Compounder</a> / <a href="https://x.com/search?q=%22Compounder%20Finance%22%20rug&src=typed_query&f=live" target="_blank" rel="noreferrer">X検索</a></li>
+          </ul>
+        </article>
+        <article class="deep-card">
+          <h3>Uranium Finance: フォーク改変の1行が全資金を壊す</h3>
+          <p>Uniswap v2/PancakeSwap系のAMMをフォークし、手数料や係数を変えた結果、定数積チェックの不整合が致命傷になった。フォークRugでは、UIやAPRは派手でも、コア数式の変更レビューが薄い。2026年の報道では、Uranium Financeの約5300万ドル相当の盗難に関連して起訴も報じられた。</p>
+          <ul>
+            <li><b>見るべき痕跡:</b> Uniswap v2 pair差分、fee multiplier、k invariant、未監査fork。</li>
+            <li><b>関連:</b> <a href="https://rekt.news/leaderboard/" target="_blank" rel="noreferrer">Rekt Leaderboard</a> / <a href="https://x.com/search?q=%22Uranium%20Finance%22%20BSC&src=typed_query&f=live" target="_blank" rel="noreferrer">X検索</a></li>
+          </ul>
+        </article>
+        <article class="deep-card">
+          <h3>PancakeBunny/Belt/bEarn: 自動複利Vaultの価格参照地獄</h3>
+          <p>BSCの自動複利Vaultは、PancakeSwap LPを預けて報酬を自動で複利するだけに見えた。しかし、Vault share価格、報酬ミント、AMM価格、ステーブルプールが絡むと、Flash Loanで一時的に価格を歪めて報酬を過剰発行させられる。BSCの低手数料は利用者に優しいだけでなく、攻撃の反復試行にも優しかった。</p>
+          <ul>
+            <li><b>見るべき痕跡:</b> LP価格算出、報酬mint式、単一AMM価格参照、deposit/withdraw前後のshare変化。</li>
+            <li><b>関連:</b> <a href="https://rekt.news/leaderboard/" target="_blank" rel="noreferrer">Rekt</a> / <a href="https://x.com/search?q=PancakeBunny%20Belt%20bEarn%20BSC%20exploit&src=typed_query&f=live" target="_blank" rel="noreferrer">X検索</a></li>
+          </ul>
+        </article>
+        <article class="deep-card">
+          <h3>Snowdog: OHM fork、買い戻し、情報非対称</h3>
+          <p>SnowdogはAvalanche上のOHM fork/ミーム通貨実験だった。8日間の蓄積期間の後、Treasury資金で買い戻しを行うとし、専用AMMとパスワード付きフロントエンドを使った。結果として、最初の数取引が極端に有利になり、内部情報・MEV対策・公平性の境界が曖昧になった。</p>
+          <ul>
+            <li><b>見るべき痕跡:</b> buyback条件、新AMM、frontend gate、事前fundingされた新規アドレス。</li>
+            <li><b>関連:</b> <a href="https://rekt.news/snowdog-rekt" target="_blank" rel="noreferrer">Rekt Snowdog</a> / <a href="https://x.com/search?q=%22Snowdog%22%20SDOG%20Avalanche&src=typed_query&f=live" target="_blank" rel="noreferrer">X検索</a></li>
+          </ul>
+        </article>
+        <article class="deep-card">
+          <h3>Iron/TITAN: Bank Run型のRugリスク</h3>
+          <p>Iron Financeは運営が流動性を抜いた単純なrugではなく、部分担保ステーブルのデススパイラルだった。TITAN価格が上がるほどIRON発行とLP報酬が魅力的になり、逆回転すると償還がTITAN売りを増幅する。Rugリスクとしては、詐欺ではない設計破綻も利用者にとっては同じくらい致命的になる。</p>
+          <ul>
+            <li><b>見るべき痕跡:</b> collateral ratio、償還フロー、吸収トークン流動性、大口退出。</li>
+            <li><b>関連:</b> <a href="https://en.wikipedia.org/wiki/Iron_Finance" target="_blank" rel="noreferrer">Iron Finance overview</a> / <a href="https://x.com/search?q=Iron%20Finance%20TITAN%20bank%20run&src=typed_query&f=live" target="_blank" rel="noreferrer">X検索</a></li>
+          </ul>
+        </article>
+        <article class="deep-card">
+          <h3>BALD: 新L2の初日が一番危ない</h3>
+          <p>Base初期のBALDは、チェーンの公式導線や主要インフラが整う前にミームコインへ資金が集中した例。デプロイヤーが巨額の流動性を入れ、注目を集め、流動性を抜いた。新チェーン初期は「他に買うものがない」「公式っぽい」「橋が不便」という条件が揃い、rug pullが起きやすい。</p>
+          <ul>
+            <li><b>見るべき痕跡:</b> LP所有者、流動性追加/削除履歴、初期資金の出所、橋/DEX未整備。</li>
+            <li><b>関連:</b> <a href="https://rekt.news/bald-rekt" target="_blank" rel="noreferrer">Rekt BALD</a> / <a href="https://x.com/search?q=BALD%20Base%20rug%20liquidity&src=typed_query&f=live" target="_blank" rel="noreferrer">X検索</a></li>
+          </ul>
+        </article>
+        <article class="deep-card">
+          <h3>Rug Pull研究: 1-day rugとserial scammer</h3>
+          <p>学術研究では、Uniswap/PancakeSwap上のscam token、1-day rug、serial scammer、Solanaの大量疑似LPなどがデータセット化されている。これは個別プロトコル史を超えて、Rugを「反復可能な詐欺オペレーション」として見る段階。名前が残らない小型rugほど、検索ではなくオンチェーン特徴量で拾う必要がある。</p>
+          <ul>
+            <li><b>見るべき痕跡:</b> deployerの連続発行、LP lock偽装、honeypot、初日LP抜き、wash trading。</li>
+            <li><b>関連:</b> <a href="https://arxiv.org/abs/2206.08202" target="_blank" rel="noreferrer">Token Spammers/Rug Pulls</a> / <a href="https://arxiv.org/abs/2412.10993" target="_blank" rel="noreferrer">Serial Scammers</a> / <a href="https://arxiv.org/abs/2504.07132" target="_blank" rel="noreferrer">SolRPDS</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+      <div class="section-title"><h2>Rug</h2><p>高APR、匿名、フォーク、短命Farm、rugpull、設計破綻をRugリスクとしてまとめる。</p></div>
+      <div class="grid two">
+        <article class="card"><h3>読む観点</h3><p>単なる詐欺リストではなく、MasterChef fork、Vault権限、proxy upgrade、LP所有、oracle、buyback、ポイント/プレセールなどのパターンで見る。</p></article>
+        <article class="card"><h3>収録数</h3><p><b data-underworld-count>0</b>件。年表ページではカテゴリ「Rug」でも絞り込める。</p></article>
+      </div>
+      <div class="section-title" style="margin-top:30px"><h2>時系列</h2><p>Rektや論文で裏を取りやすいものを優先。</p></div>
+      <div class="timeline" id="underworldTimeline"></div>
+    </main>
+  <footer><div class="wrap">作成目的: DeFiプロトコル進化の調査・参照用。日付とステータスは市場やドキュメント更新で変わる可能性がある。</div></footer>
+  <script src="assets/defi-data.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>

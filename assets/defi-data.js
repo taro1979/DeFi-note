@@ -1,0 +1,1658 @@
+// Generated from defi_timeline.html by build_multisite.js.
+// Edit the source timeline data there, then rerun this script.
+(function () {
+const sources = {
+      univ1: ["Uniswap history", "https://en.wikipedia.org/wiki/Uniswap"],
+      univ2: ["Uniswap v2 overview", "https://blog.uniswap.org/uniswap-v2"],
+      univ3: ["Uniswap v3 announcement", "https://blog.uniswap.org/uniswap-v3"],
+      univ4: ["Uniswap v4 docs", "https://developers.uniswap.org/docs/protocols/v4/overview"],
+      compound: ["Compound v2 docs", "https://docs.compound.finance/v2/"],
+      aave: ["Aave v1 docs", "https://aave.com/docs/resources/legacy-versions/v1"],
+      curve: ["Curve whitepapers/docs", "https://docs.curve.finance/references/whitepaper/"],
+      balancerWeighted: ["Balancer Weighted Pools", "https://docs.balancer.fi/concepts/explore-available-balancer-pools/weighted-pool/weighted-pool.html"],
+      balancerStable: ["Balancer Stable Pools", "https://docs.balancer.fi/concepts/explore-available-balancer-pools/stable-pool/stable-pool.html"],
+      yearn: ["Yearn yVaults docs", "https://docs.yearn.fi/getting-started/products/yvaults/overview"],
+      yearnToken: ["Yearn vault token docs", "https://docs.yearn.fi/getting-started/products/yvaults/vault-tokens"],
+      yieldSok: ["SoK: Yield Aggregators in DeFi", "https://arxiv.org/abs/2105.13891"],
+      sushi: ["SushiSwap background", "https://www.investopedia.com/sushi-token-5248641"],
+      convex: ["Convex for Curve.fi", "https://docs.convexfinance.com/convexfinance/general-information/why-convex"],
+      convexGauge: ["Convex gauge voting", "https://docs.convexfinance.com/convexfinance/general-information/why-convex/voting-and-gauge-weights"],
+      alchemix: ["Alchemix user docs", "https://alchemix-finance.gitbook.io/user-docs/"],
+      liquity: ["Liquity docs", "https://docs.liquity.org/"],
+      olympus: ["Olympus overview", "https://docs.olympusdao.finance/main/overview/intro"],
+      olympusPol: ["Olympus POL docs", "https://docs.olympusdao.finance/main/overview/pol"],
+      fraxV1: ["Frax original design", "https://docs.frax.finance/frax-v1-original/original-design"],
+      fraxAmo: ["Frax AMO overview", "https://docs.frax.finance/amo/overview"],
+      fraxEco: ["Frax ecosystem overview", "https://docs.frax.finance/"],
+      fraxV3: ["Frax v3 overview", "https://docs.frax.finance/frax-v3-100-cr-and-more/overview"],
+      pendle: ["Pendle docs index", "https://docs.pendle.finance/llms.txt"],
+      ethena: ["Ethena overview", "https://docs.ethena.fi/"],
+      morpho: ["Morpho overview", "https://en.wikipedia.org/wiki/Morpho_(DeFi_lending_protocol)"],
+      gmx: ["GMX v1 liquidity docs", "https://docs.gmx.io/docs/providing-liquidity/v1/"],
+      dydx: ["dYdX v4 / Cosmos report", "https://www.axios.com/2022/06/22/dydx-defi-blue-chip-ethereum-build-next-version-cosmos"],
+      lendingPaper: ["DeFi loanable funds paper", "https://arxiv.org/abs/2006.13922"],
+      uniswapPaper: ["Analysis of Uniswap markets", "https://arxiv.org/abs/1911.03380"],
+      morphoPaper: ["Dynamic pricing in DeFi lending", "https://arxiv.org/abs/2503.18237"],
+      starkware: ["StarkWare / StarkEx background", "https://en.wikipedia.org/wiki/StarkWare_Industries"],
+      makerDocs: ["MakerDAO technical docs", "https://docs.makerdao.com/"],
+      bancorDocs: ["Bancor V3 docs", "https://docs.bancor.network/"],
+      kyberDocs: ["KyberSwap docs", "https://docs.kyberswap.com/"],
+      inchDocs: ["1inch developer docs", "https://business.1inch.com/portal/documentation"],
+      dodoDocs: ["DODO PMM docs", "https://docs.dodoex.io/en/product/pmm-algorithm"],
+      dodoZh: ["DODO PMM Chinese docs", "https://docs.dodoex.io/zh/product/pmm-algorithm"],
+      maverickDocs: ["Maverick docs", "https://docs.mav.xyz/"],
+      ambientDocs: ["Ambient docs", "https://docs.ambient.finance/"],
+      eulerDocs: ["Euler docs", "https://docs.euler.finance/"],
+      siloDocs: ["Silo docs", "https://docs.silo.finance/"],
+      gearboxDocs: ["Gearbox docs", "https://docs.gearbox.finance/"],
+      notionalDocs: ["Notional docs", "https://docs.notional.finance/notional-v3/"],
+      centrifugeDocs: ["Centrifuge docs", "https://docs.centrifuge.io/"],
+      ondoDocs: ["Ondo docs", "https://docs.ondo.finance/"],
+      mapleDocs: ["Maple docs", "https://docs.maple.finance/"],
+      goldfinchDocs: ["Goldfinch docs", "https://docs.goldfinch.finance/goldfinch/"],
+      lidoDocs: ["Lido docs", "https://docs.lido.fi/"],
+      rocketDocs: ["Rocket Pool docs", "https://docs.rocketpool.net/"],
+      rocketJa: ["Rocket Pool Japanese docs", "https://docs.rocketpool.net/ja/"],
+      rocketZh: ["Rocket Pool Chinese docs", "https://docs.rocketpool.net/zh/"],
+      rocketKo: ["Rocket Pool Korean docs", "https://docs.rocketpool.net/ko/"],
+      eigenDocs: ["EigenCloud / EigenLayer docs", "https://docs.eigencloud.xyz/"],
+      lyraDocs: ["Lyra docs", "https://docs.lyra.finance/"],
+      aevoDocs: ["Aevo docs", "https://docs.aevo.xyz/"],
+      gainsDocs: ["Gains Network docs", "https://docs.gains.trade/"],
+      rektLeaderboard: ["Rekt leaderboard", "https://rekt.news/leaderboard/"],
+      rektMeerkat: ["Rekt: Meerkat Finance", "https://rekt.news/meerkat-finance-bsc-rekt"],
+      rektCompounder: ["Rekt: Compounder Finance", "https://rekt.news/deathbed-confessions-c3pr"],
+      rektSnowdog: ["Rekt: Snowdog", "https://rekt.news/snowdog-rekt"],
+      rektBald: ["Rekt: BALD on Base", "https://rekt.news/bald-rekt"],
+      defillama: ["DeFiLlama protocols", "https://defillama.com/protocols"],
+      immunefi: ["Immunefi crypto losses reports", "https://immunefi.com/research/"],
+      yieldSurvey: ["Yield farming survey", "https://arxiv.org/abs/2210.04194"],
+      rugSok: ["SoK: Rug Pull Causes", "https://arxiv.org/abs/2403.16082"],
+      tradeOrTrick: ["Trade or Trick: Scam Tokens on Uniswap", "https://arxiv.org/abs/2109.00229"],
+      tokenSpammers: ["Token Spammers, Rug Pulls, and SniperBots", "https://arxiv.org/abs/2206.08202"],
+      solRpds: ["SolRPDS: Solana Rug Pull Dataset", "https://arxiv.org/abs/2504.07132"],
+      serialScammers: ["Serial Scammers and Attack of the Clones", "https://arxiv.org/abs/2412.10993"],
+      ammSok: ["AMM SoK paper", "https://arxiv.org/abs/2103.12732"],
+      univ3Risk: ["Uniswap v3 LP risks paper", "https://arxiv.org/abs/2205.08904"],
+      coin98Defi: ["Coin98 Vietnamese DeFi overview", "https://coin98.net/defi-la-gi"],
+      coin98Uni: ["Upside Vietnamese Uniswap overview", "https://upside.vn/uniswap-la-gi"]
+    };
+
+    const entries = [
+      {
+        year: 2018, date: "2018-09頃", name: "Compound v1",
+        category: "Lending", tags: ["貸付", "Money Market", "cToken前史"],
+        summary: "オンチェーンのプール型貸付市場を普及させた初期プロトコル。個別マッチングではなく、供給者と借入者が同じ市場に入り、利用率に応じて金利が動く設計が後のAave、Cream、Euler、Morphoへつながった。",
+        tech: "アルゴリズム金利、担保率、清算インセンティブ、後のcTokenモデル。",
+        status: "存続。Compound III以後も旧v2市場は重要な歴史的基盤。",
+        sources: ["compound", "lendingPaper"]
+      },
+      {
+        year: 2018, date: "2018-11-02", name: "Uniswap v1",
+        category: "DEX/AMM", tags: ["AMM", "x*y=k", "ERC20/ETH"],
+        summary: "注文板なしで誰でも流動性プールを作れるConstant Product AMMを実用化。ETHを共通ルートにしたERC20交換で、上場審査の概念をほぼ消した。",
+        tech: "x*y=k、LPトークン、0.3%手数料、permissionless listing。",
+        status: "v1は歴史的実装。v2/v3/v4に発展。",
+        sources: ["univ1", "uniswapPaper"],
+        importance: "major"
+      },
+      {
+        year: 2018, date: "2018-2019", name: "Synthetix",
+        category: "Derivatives", tags: ["合成資産", "Debt Pool", "SNX"],
+        summary: "Havvenからリブランドし、SNX担保でsUSDや各種Synthを発行する合成資産プロトコルへ。個別担保ではなく、ステーカー全員が共有債務プールを負う構造が特徴。",
+        tech: "過剰担保、共有デットプール、オラクル価格、シンセティック資産。",
+        status: "Kwenta、Lyraなど周辺エコシステムへ影響。",
+        sources: ["lendingPaper"],
+        importance: "minor"
+      },
+      {
+        year: 2019, date: "2019-02頃", name: "Set Protocol / TokenSets",
+        category: "Asset Management", tags: ["指数", "自動リバランス", "ERC20ポートフォリオ"],
+        summary: "複数資産や戦略をERC20として包む初期のオンチェーン資産運用。後のIndex Coop、PieDAO、Structured Productsの発想につながる。",
+        tech: "トークン化バスケット、リバランス、マネージャー戦略。",
+        status: "初期DeFiの資産運用レイヤーとして重要。",
+        sources: ["yieldSok"],
+        importance: "minor"
+      },
+      {
+        year: 2019, date: "2019-05頃", name: "Compound v2",
+        category: "Lending", tags: ["cToken", "担保貸付", "流動性市場"],
+        summary: "cDAI、cUSDCなどのcTokenにより、預け入れポジションをトークンとして扱いやすくした。DeFiの担保、レバレッジ、金利裁定の基礎部品になった。",
+        tech: "cToken交換レート、ブロック単位の利息、Comptroller、清算。",
+        status: "古典的money marketとして長く参照される。",
+        sources: ["compound", "lendingPaper"],
+        importance: "major"
+      },
+      {
+        year: 2019, date: "2019-06頃", name: "PoolTogether",
+        category: "Other", tags: ["No-loss Lottery", "ゲーミフィケーション"],
+        summary: "ユーザーの預金利息を賞金にする『元本が減りにくい宝くじ』。DeFiの利息をUXに変換する試みとしてマニアックだが象徴的。",
+        tech: "Compoundなどの利回りを集約し、利息部分を抽選で配分。",
+        status: "DeFiゲーム/消費者向け金融実験の先駆け。",
+        sources: ["compound"],
+        importance: "minor"
+      },
+      {
+        year: 2019, date: "2019-08頃", name: "dYdX early protocol",
+        category: "Derivatives", tags: ["Margin", "Perpetuals前史", "Orderbook"],
+        summary: "Ethereum上でマージン、貸付、後にperpetualを提供。DeFiはAMMだけでなく、プロ向け取引インフラにも広がることを示した。",
+        tech: "担保管理、マージン取引、オーダーブック寄りの設計。",
+        status: "後にStarkEx、さらにCosmosベースのdYdX Chainへ移行。",
+        sources: ["dydx", "starkware"],
+        importance: "minor"
+      },
+      {
+        year: 2019, date: "2019-11", name: "MakerDAO Multi-Collateral Dai",
+        category: "Stablecoin", tags: ["DAI", "CDP", "Vault"],
+        summary: "ETH単一担保のSaiから、複数担保のDAIへ。DeFi全体の基軸ステーブルとして、AMM、貸付、イールド戦略の決済単位になった。",
+        tech: "Vault、担保オークション、MKRガバナンス、安定化手数料。",
+        status: "後にSkyへリブランドし、RWAやsDAIへ拡張。",
+        sources: ["lendingPaper"],
+        importance: "major"
+      },
+      {
+        year: 2020, date: "2020-01", name: "Curve Finance",
+        category: "DEX/AMM", tags: ["StableSwap", "低スリッページ", "ステーブルAMM"],
+        summary: "似た価格の資産に特化したStableSwap invariantで、DAI/USDC/USDT、後にstETH/ETHなどの大口交換を効率化した。",
+        tech: "Amplification coefficient A、StableSwap invariant、メタプール、後のCryptoswap。",
+        status: "veCRV、Gauge、Convexを含むメタガバナンスの中心。",
+        sources: ["curve"],
+        importance: "major"
+      },
+      {
+        year: 2020, date: "2020-01", name: "Aave v1",
+        category: "Lending", tags: ["Flash Loan", "aToken", "流動性プール"],
+        summary: "ETHLendのP2P貸付から流動性プール型へ転換。Flash Loanを大きく普及させ、資本なし裁定・清算・攻撃の両面を解放した。",
+        tech: "aToken、Flash Loan、安定/変動金利、Health Factor。",
+        status: "v2/v3を経て最大級の貸付プロトコルに発展。",
+        sources: ["aave"],
+        importance: "major"
+      },
+      {
+        year: 2020, date: "2020-02", name: "bZx flash-loan incidents",
+        category: "Risk", tags: ["Flash Loan", "Oracle", "攻撃史"],
+        summary: "Flash Loanを用いた価格操作・清算攻撃が可視化され、DeFiのコンポーザビリティは攻撃面も合成することが共有知になった。",
+        tech: "単一トランザクション借入、薄い流動性、価格オラクル依存。",
+        status: "以後のTWAP、オラクル分散、監査文化に影響。",
+        sources: ["aave", "univ2"],
+        importance: "minor"
+      },
+      {
+        year: 2020, date: "2020-03", name: "Balancer",
+        category: "DEX/AMM", tags: ["Weighted Pool", "LBP", "多資産AMM"],
+        summary: "50/50に限らない重み付きAMM。80/20や60/20/20など任意比率、複数資産プール、Liquidity Bootstrapping Poolでトークンローンチも支えた。",
+        tech: "Weighted Math、BPT、可変重み、後にStable PoolやBoosted Pool。",
+        status: "v2/v3のVaultアーキテクチャへ発展。",
+        sources: ["balancerWeighted", "balancerStable"],
+        importance: "major"
+      },
+      {
+        year: 2020, date: "2020-05", name: "Uniswap v2",
+        category: "DEX/AMM", tags: ["ERC20/ERC20", "TWAP", "Flash Swap"],
+        summary: "ETHルート必須をやめ、ERC20同士の直接ペア、TWAPオラクル、Flash Swapを導入。DeFiアプリの価格参照・裁定・ルーティングが一段進化した。",
+        tech: "ERC20/ERC20 pair、cumulative price TWAP、Flash Swap、CREATE2。",
+        status: "現在も多くのフォークと長寿プールを持つ。",
+        sources: ["univ2"],
+        importance: "major"
+      },
+      {
+        year: 2020, date: "2020-06", name: "COMP liquidity mining",
+        category: "Governance", tags: ["流動性マイニング", "ガバナンストークン", "DeFi Summer"],
+        summary: "CompoundのCOMP配布で、プロトコル利用がトークン報酬と結びついた。これがDeFi SummerのAPY競争、ファーム、ヴァンパイア攻撃の発火点になった。",
+        tech: "利用量比例配布、治理トークン、インセンティブによるTVL獲得。",
+        status: "トークンインセンティブ設計の標準パターン化。",
+        sources: ["compound", "yieldSok"],
+        importance: "major"
+      },
+      {
+        year: 2020, date: "2020-06頃", name: "mStable",
+        category: "Stablecoin", tags: ["Meta-stable", "Basket", "Save"],
+        summary: "複数ステーブルコインをバスケット化し、mUSDなどを発行する試み。ペッグ資産の分散と利回り集約を早くから狙った。",
+        tech: "ステーブルバスケット、リデンプション、利回り集約。",
+        status: "後続のメタステーブル、RWA利回りステーブルの前史。",
+        sources: ["yieldSok"],
+        importance: "minor"
+      },
+      {
+        year: 2020, date: "2020-07", name: "Yearn Finance",
+        category: "Yield", tags: ["yVault", "Yield Aggregator", "YFI"],
+        summary: "利回り最適化を自動化し、ユーザーはVaultに預けるだけで戦略がCompound、Curve、Aave等を巡回する世界を作った。YFIのフェアローンチも象徴的。",
+        tech: "yVault、Strategy、Harvest、Vault share token、後にv2/v3で複数戦略とERC-4626。",
+        status: "Yield Aggregatorの代表格として存続。",
+        sources: ["yearn", "yearnToken", "yieldSok"],
+        importance: "major"
+      },
+      {
+        year: 2020, date: "2020-08", name: "YAM Finance",
+        category: "Governance", tags: ["Rebase", "Fair Launch", "実験的DeFi"],
+        summary: "Ampleforth風のリベース、Compound風ガバナンス、Yearn風フェアローンチを混ぜた短命実験。バグで崩れたが『食べ物ファーム』時代の象徴になった。",
+        tech: "Elastic supply、オンチェーンガバナンス、フェアローンチ。",
+        status: "短命だが、投機・ガバナンス・実験速度を象徴。",
+        sources: ["yieldSok"],
+        importance: "minor"
+      },
+      {
+        year: 2020, date: "2020-08", name: "DODO",
+        category: "DEX/AMM", tags: ["PMM", "Oracle-guided AMM", "資本効率"],
+        summary: "Proactive Market Makerにより、外部価格を参照して在庫を集中させるAMM。Uniswap型の受動的x*y=kに対する別解だった。",
+        tech: "PMM、オラクル価格、片側流動性、資本効率。",
+        status: "BSC、Ethereum等でマルチチェーン展開。",
+        sources: ["uniswapPaper"],
+        importance: "minor"
+      },
+      {
+        year: 2020, date: "2020-08", name: "SushiSwap",
+        category: "DEX/AMM", tags: ["Vampire Attack", "Fork", "SUSHI"],
+        summary: "Uniswap v2をフォークし、LPにSUSHI報酬を配って流動性を移す『ヴァンパイア攻撃』を実行。プロトコルはコードだけでなく、流動性とコミュニティを奪い合うと示した。",
+        tech: "Uniswap v2 fork、LP移行、ガバナンストークン、手数料分配。",
+        status: "混乱を経てマルチチェーンDEXとして継続。",
+        sources: ["sushi", "univ2"],
+        importance: "major"
+      },
+      {
+        year: 2020, date: "2020-09", name: "Cream Finance",
+        category: "Lending", tags: ["Compound fork", "ロングテール担保", "Iron Bank前史"],
+        summary: "Compoundをフォークし、より攻めた資産上場とマルチチェーン展開を進めた。DeFi Summerらしい速さとリスクの両方を持つ貸付市場。",
+        tech: "cToken型市場、ロングテール資産、後に信用枠的Iron Bank。",
+        status: "複数の攻撃を経験し、リスク管理の教材にもなった。",
+        sources: ["compound", "lendingPaper"],
+        importance: "minor"
+      },
+      {
+        year: 2020, date: "2020-09", name: "Pickle Finance",
+        category: "Yield", tags: ["Farm", "Peg strategy", "Jar"],
+        summary: "ステーブルコインのペッグを保つよう報酬を設計し、Jarで利回り戦略を提供したマニアックなファーム。後のYearn合併文化にも影響。",
+        tech: "Pickle Jar、Gauge風報酬、ペッグ誘導インセンティブ。",
+        status: "DeFi Summerの食べ物ファーム代表の一つ。",
+        sources: ["yieldSok"],
+        importance: "minor"
+      },
+      {
+        year: 2020, date: "2020-09", name: "Opyn / Hegic / Primitive",
+        category: "Derivatives", tags: ["Options", "Covered Vault", "AMM Options"],
+        summary: "オンチェーンオプション市場の初期実験群。流動性、価格付け、清算、UXの難しさを露呈しつつ、後のRibbonやPanopticにつながった。",
+        tech: "oToken、オプションVault、AMM型オプション、担保管理。",
+        status: "一部は後続プロダクトへ発展、または影響だけ残した。",
+        sources: ["yieldSok"],
+        importance: "minor"
+      },
+      {
+        year: 2020, date: "2020-10", name: "Harvest Finance",
+        category: "Yield", tags: ["Yield Aggregator", "Farm", "攻撃史"],
+        summary: "Yearnに近い利回り集約。急成長と攻撃の両方を経験し、Vault戦略は単なるAPYではなく、価格操作・退出流動性まで含むリスク管理だと示した。",
+        tech: "Vault、Strategy、Curve/Compound等への自動配分。",
+        status: "DeFi Summerの代表的アグリゲータ。",
+        sources: ["yieldSok"],
+        importance: "minor"
+      },
+      {
+        year: 2020, date: "2020-11", name: "Perpetual Protocol v1",
+        category: "Derivatives", tags: ["vAMM", "Perps", "xDai"],
+        summary: "実資産プールではなく仮想AMMでperpetual価格を作る設計。オンチェーンperpsを、CLOBではなくAMMで実現しようとした初期の代表例。",
+        tech: "Virtual AMM、保険基金、資金調達率、レバレッジ。",
+        status: "後にv2 CurieでUniswap v3型流動性へ接続。",
+        sources: ["univ3"],
+        importance: "minor"
+      },
+      {
+        year: 2020, date: "2020-12-20", name: "Frax v1",
+        category: "Stablecoin", tags: ["Fractional Algorithmic", "FRAX", "FXS"],
+        summary: "完全担保でも完全アルゴリズムでもない、部分担保・部分アルゴリズム型ステーブル。価格に応じて担保率を変える実験だった。",
+        tech: "動的Collateral Ratio、mint/redeem、FXSによる吸収。",
+        status: "後にAMO、100%担保、sFRAX、Fraxtal等へ大きく設計変更。",
+        sources: ["fraxV1"],
+        importance: "major"
+      },
+      {
+        year: 2021, date: "2021-01", name: "Alpha Homora",
+        category: "Yield", tags: ["Leveraged Yield Farming", "Iron Bank", "レバファーム"],
+        summary: "LPやファームを借入でレバレッジする戦略を一般化。DeFiのAPY競争を、担保貸付とAMM流動性の組み合わせへ押し広げた。",
+        tech: "借入を使ったLPポジション、清算、戦略コントラクト。",
+        status: "DeFi Summer後のレバレッジ戦略の代表。",
+        sources: ["yieldSok", "lendingPaper"],
+        importance: "minor"
+      },
+      {
+        year: 2021, date: "2021-02", name: "BadgerDAO",
+        category: "Yield", tags: ["Bitcoin DeFi", "Sett", "DIGG"],
+        summary: "WBTC、renBTCなどBTCをEthereum DeFiに取り込むことに特化。Sett VaultでBTC系利回りを集約し、BTC担保DeFiの文化を作った。",
+        tech: "Vault、BTCペッグ資産、Curve戦略、DIGGリベース。",
+        status: "BTCFi前史として重要。",
+        sources: ["yieldSok"],
+        importance: "minor"
+      },
+      {
+        year: 2021, date: "2021-02", name: "Alchemix",
+        category: "Lending", tags: ["Self-repaying Loan", "alUSD", "Future Yield"],
+        summary: "預けた担保の将来利回りを先取りしてalUSD/alETHを借りる。利息で借金が自動返済され、清算がないという体験を作った。",
+        tech: "将来利回り担保、alAsset、Transmuter、Yearn等への運用。",
+        status: "自己返済ローンの代表的プロトコル。",
+        sources: ["alchemix", "yearn"],
+        importance: "major"
+      },
+      {
+        year: 2021, date: "2021-04", name: "Fei Protocol",
+        category: "Stablecoin", tags: ["PCV", "Direct Incentives", "TRIBE"],
+        summary: "Protocol Controlled Valueを掲げ、ユーザー流動性ではなくプロトコル所有資産でペッグと流動性を支えようとした。ローンチ混乱も含めてDeFi 2.0前夜の重要実験。",
+        tech: "PCV、ペッグインセンティブ、Bonding Curve、後にFuse/Rariと合流。",
+        status: "短命だがPCV概念を広げた。",
+        sources: ["olympusPol"],
+        importance: "minor"
+      },
+      {
+        year: 2021, date: "2021-04", name: "Liquity v1",
+        category: "Stablecoin", tags: ["LUSD", "Zero-interest", "Stability Pool"],
+        summary: "ETH担保でLUSDを発行する、無利子・最低担保率110%のステーブルコイン貸付。フロントエンドを分散し、ガバナンス最小化を志向した。",
+        tech: "Troves、Stability Pool、Redemption、ガバナンス最小設計。",
+        status: "LUSDは長く残り、v2ではBOLDへ発展。",
+        sources: ["liquity"],
+        importance: "major"
+      },
+      {
+        year: 2021, date: "2021-05", name: "Uniswap v3",
+        category: "DEX/AMM", tags: ["Concentrated Liquidity", "NFT LP", "Capital Efficiency"],
+        summary: "LPが価格範囲を指定する集中流動性を導入。資本効率は劇的に上がったが、LPは在庫管理、レンジ管理、ガス、ILを能動的に負うようになった。",
+        tech: "Tick、集中流動性、複数手数料Tier、LP NFT、改善TWAP。",
+        status: "CLAMMの標準となり、多数のチェーンとDEXに波及。",
+        sources: ["univ3"],
+        importance: "major"
+      },
+      {
+        year: 2021, date: "2021-05頃", name: "Reflexer RAI",
+        category: "Stablecoin", tags: ["Non-pegged Stable Asset", "PID", "ETH担保"],
+        summary: "USDペッグではなく、償還価格が制御される非ペッグ型安定資産。中央集権ステーブルやドル依存への別解としてマニアックだが重要。",
+        tech: "PID Controller、Redemption price/rate、ETH担保CDP。",
+        status: "分散型ステーブル設計の実験例。",
+        sources: ["lendingPaper"],
+        importance: "minor"
+      },
+      {
+        year: 2021, date: "2021-05", name: "Rari Fuse",
+        category: "Lending", tags: ["Permissionless Lending", "Isolated Pools", "ロングテール"],
+        summary: "誰でも独自の貸付プールを作れる市場。Compound型の一枚岩ではなく、プールごとに担保・パラメータ・リスクを分離する発想を広げた。",
+        tech: "孤立プール、カスタム担保、管理者設定、Fuse pool。",
+        status: "後に攻撃・Fei統合などを経たが、Euler/Morpho系へ影響。",
+        sources: ["lendingPaper", "morphoPaper"],
+        importance: "minor"
+      },
+      {
+        year: 2021, date: "2021-06", name: "Convex Finance",
+        category: "Governance", tags: ["veCRV", "Meta-governance", "Curve Wars"],
+        summary: "Curve LPが自分でCRVをロックせずにboosted CRVを得られるようにし、veCRV投票権を集約。Curve Wars、bribe市場、ガバナンス流動性の中心になった。",
+        tech: "cvxCRV、vlCVX、Gauge vote、boosted CRV、報酬集約。",
+        status: "Curve、Frax、Prisma等にまたがるメタガバナンス基盤。",
+        sources: ["convex", "convexGauge"],
+        importance: "major"
+      },
+      {
+        year: 2021, date: "2021-06", name: "BarnBridge",
+        category: "Derivatives", tags: ["Risk Tranche", "Fixed Yield", "SMART Yield"],
+        summary: "利回りや価格リスクをシニア/ジュニアに分けるトランチ商品をオンチェーン化。DeFi債券・固定利回りの初期実験として重要。",
+        tech: "トランチ化、固定/変動利回り、リスク分離。",
+        status: "後のPendle、Notional、Element等と同じ固定利回り系譜。",
+        sources: ["yieldSok", "pendle"],
+        importance: "minor"
+      },
+      {
+        year: 2021, date: "2021-06", name: "Ribbon Finance",
+        category: "Derivatives", tags: ["DOV", "Options Vault", "Structured Products"],
+        summary: "カバードコールやプット売りをVault化し、ユーザーはオプション戦略をワンクリックで実行できるようになった。DOVブームの代表。",
+        tech: "Theta Vault、オプションオークション、構造化利回り。",
+        status: "後にAevo等へ発展。",
+        sources: ["yieldSok"],
+        importance: "minor"
+      },
+      {
+        year: 2021, date: "2021-07", name: "Tokemak",
+        category: "DEX/AMM", tags: ["Liquidity Reactor", "Protocol Liquidity", "DAO向け流動性"],
+        summary: "DAOが自分のトークン流動性を外部LP報酬に頼らず配分する『流動性リアクター』構想。流動性を商品として管理する発想が鮮明だった。",
+        tech: "Reactor、TOKE投票、Protocol-directed liquidity。",
+        status: "POL/流動性管理の実験として記憶される。",
+        sources: ["olympusPol"],
+        importance: "minor"
+      },
+      {
+        year: 2021, date: "2021-08", name: "Abracadabra Money",
+        category: "Stablecoin", tags: ["MIM", "Interest-bearing collateral", "Degenbox"],
+        summary: "yvUSDTやxSUSHIなど利回り付き資産を担保にMIMを発行。『利回りを生む担保からさらにステーブルを借りる』degen構造を一般化した。",
+        tech: "Kashi isolated markets、MIM、Degenbox、利回り担保CDP。",
+        status: "高レバレッジDeFiの象徴的プロトコル。",
+        sources: ["yearn", "lendingPaper"],
+        importance: "minor"
+      },
+      {
+        year: 2021, date: "2021-08", name: "OlympusDAO",
+        category: "Governance", tags: ["OHM", "POL", "(3,3)", "Bonding"],
+        summary: "Protocol Owned LiquidityとBondで、プロトコル自身が流動性を所有する設計を流行させた。APYミームも強烈だったが、POL概念は後に真面目に残った。",
+        tech: "Treasury-backed token、Bond、Staking/rebase、POL、後にRBS/Cooler Loans。",
+        status: "DeFi 2.0の代表。多くのフォークと失敗例も生んだ。",
+        sources: ["olympus", "olympusPol"],
+        importance: "major"
+      },
+      {
+        year: 2021, date: "2021-09", name: "Trader Joe / SpookySwap",
+        category: "DEX/AMM", tags: ["Alt-L1 DeFi", "Avalanche", "Fantom"],
+        summary: "Avalanche、FantomなどAlt-L1でUniswap/Sushi型DEXとファームが爆発。Ethereumの高ガスから逃げたDeFiユーザーがマルチチェーンへ移った。",
+        tech: "AMM、Farm、Launchpad、チェーン固有インセンティブ。",
+        status: "Alt-L1 DeFiサイクルの代表例。",
+        sources: ["univ2", "yieldSok"],
+        importance: "minor"
+      },
+      {
+        year: 2021, date: "2021-10", name: "KlimaDAO",
+        category: "Other", tags: ["ReFi", "Olympus fork", "Carbon"],
+        summary: "Olympus型メカニズムをカーボンクレジットに応用したReFi実験。DeFiの金融プリミティブが現実世界の証書市場へ触れた例。",
+        tech: "Bonding、Treasury、carbon token、rebase。",
+        status: "投機性と実需接続の難しさを残した。",
+        sources: ["olympusPol"],
+        importance: "minor"
+      },
+      {
+        year: 2021, date: "2021-11", name: "Curve Tricrypto / Cryptoswap",
+        category: "DEX/AMM", tags: ["Cryptoswap", "Volatile AMM", "TriCrypto"],
+        summary: "StableSwapだけでなく、BTC/ETH/USDTのようなボラティル資産にもCurve流の不変式を拡張。『相関するが同一価格ではない』資産へのAMM設計が成熟した。",
+        tech: "Cryptoswap invariant、動的ペグ、TriCrypto。",
+        status: "Curveのステーブル専用イメージを広げた。",
+        sources: ["curve"],
+        importance: "minor"
+      },
+      {
+        year: 2022, date: "2022-01", name: "Solidly",
+        category: "DEX/AMM", tags: ["ve(3,3)", "Bribes", "Gauge"],
+        summary: "CurveのveTokenとOlympusの(3,3)を混ぜ、AMM手数料と排出を投票で誘導する設計。多くのフォーク、特にVelodrome/Aerodromeに影響した。",
+        tech: "veNFT、Gauge、Bribe、排出投票、低スリッページAMM。",
+        status: "本家は混乱したが、設計思想はL2 DEXへ継承。",
+        sources: ["convexGauge", "olympusPol"],
+        importance: "minor"
+      },
+      {
+        year: 2022, date: "2022-01", name: "GMX",
+        category: "Derivatives", tags: ["GLP", "Oracle Perps", "Arbitrum"],
+        summary: "GLPというマルチアセット流動性プールを相手に、オンチェーンperpsを提供。手数料収益をLP/GMX stakerへ配る『real yield』 narrativaの中心になった。",
+        tech: "GLP、oracle pricing、perpetual swaps、Arbitrum/Avalanche。",
+        status: "v1 GLPは2025年に段階終了、v2のGM/GLVへ移行。",
+        sources: ["gmx"],
+        importance: "major"
+      },
+      {
+        year: 2022, date: "2022-03", name: "Aave v3",
+        category: "Lending", tags: ["Isolation Mode", "E-mode", "Portals"],
+        summary: "資産リスクをより細かく管理するIsolation Mode、相関資産向けE-mode、クロスチェーン流動性構想を導入。大規模貸付プロトコルの安全設計が進んだ。",
+        tech: "Isolation Mode、Efficiency Mode、Supply/Borrow caps、L2最適化。",
+        status: "複数チェーンで主要貸付市場として稼働。",
+        sources: ["aave"],
+        importance: "major"
+      },
+      {
+        year: 2022, date: "2022-05", name: "Terra / Anchor collapse",
+        category: "Risk", tags: ["UST", "Algorithmic Stablecoin", "信用崩壊"],
+        summary: "Anchorの高利回りとUSTのアルゴリズムペッグが崩壊。以後、DeFiでは『利回りの源泉』『担保の質』『償還可能性』がより厳しく見られるようになった。",
+        tech: "アルゴリズムステーブル、補助金利回り、反射的担保構造。",
+        status: "DeFiとCeFiのリスク認識を大きく変えたイベント。",
+        sources: ["fraxV1", "fraxV3"],
+        importance: "major"
+      },
+      {
+        year: 2022, date: "2022-06", name: "Euler Finance",
+        category: "Lending", tags: ["Permissionless Listing", "Isolated Risk", "Reactive rates"],
+        summary: "より自由な資産上場とリスク階層を備えた貸付市場。ロングテール担保を扱うには、全市場共有ではなくリスク分離が必要だと示した。",
+        tech: "Asset tiers、isolated borrowing、reactive interest rates、MEV resistant liquidation。",
+        status: "攻撃後も再建され、モジュール型貸付の系譜に残る。",
+        sources: ["morphoPaper", "lendingPaper"],
+        importance: "minor"
+      },
+      {
+        year: 2022, date: "2022-06", name: "dYdX v4 announcement",
+        category: "Derivatives", tags: ["Appchain", "Cosmos", "CLOB"],
+        summary: "次期版をEthereum L2ではなくCosmos appchainとして構築すると発表。高頻度perpsでは、汎用チェーンよりアプリ専用チェーンが有利という流れを作った。",
+        tech: "Cosmos SDK/Tendermint、専用バリデータ、分散オーダーブック構想。",
+        status: "2023年にdYdX Chainへ移行。",
+        sources: ["dydx"],
+        importance: "major"
+      },
+      {
+        year: 2022, date: "2022-07", name: "Velodrome",
+        category: "DEX/AMM", tags: ["Optimism", "ve(3,3)", "Bribe Market"],
+        summary: "Solidly型をOptimism向けに再設計し、L2の基幹DEXになった。プロトコル流動性をBribe/Gaugeで誘導するモデルを安定運用に近づけた。",
+        tech: "veNFT、Gauge、Bribes、stable/volatile pools。",
+        status: "後にBaseのAerodromeにも思想が継承。",
+        sources: ["convexGauge"],
+        importance: "minor"
+      },
+      {
+        year: 2022, date: "2022-08", name: "Sudoswap",
+        category: "DEX/AMM", tags: ["NFT AMM", "Bonding Curve", "Royalty debate"],
+        summary: "NFTを注文板ではなくAMMプールで売買する設計。DeFiのbonding curveをNFT流動性に持ち込んだマニアックだが重要な試み。",
+        tech: "NFT bonding curve、片側/両側プール、即時流動性。",
+        status: "NFT金融化の初期インフラ。",
+        sources: ["uniswapPaper"],
+        importance: "minor"
+      },
+      {
+        year: 2022, date: "2022-11", name: "CeFi failures and proof-of-DeFi moment",
+        category: "Risk", tags: ["FTX", "Transparency", "On-chain collateral"],
+        summary: "FTX等の破綻で、オンチェーン担保、清算、透明なリザーブの価値が再評価された。GMXやdYdX、Aave/Compoundのような透明市場に注目が戻った。",
+        tech: "オンチェーン会計、過剰担保、即時清算、非カストディ。",
+        status: "DeFiの価値提案が再定義された局面。",
+        sources: ["aave", "compound", "gmx"],
+        importance: "major"
+      },
+      {
+        year: 2023, date: "2023-02", name: "Spark Protocol",
+        category: "Lending", tags: ["Maker/Sky", "DAI", "sDAI"],
+        summary: "Maker/Sky周辺の貸付市場として、DAI需要、PSM、RWA利回りをDeFi貸付へ接続。Aave風の市場設計とMakerのバランスシートが近づいた。",
+        tech: "DAI lending、sDAI、Maker RWA利回り、Aave系コードベース。",
+        status: "Maker/Skyエコシステムの重要パーツ。",
+        sources: ["aave", "fraxV3"],
+        importance: "minor"
+      },
+      {
+        year: 2023, date: "2023-05", name: "Curve crvUSD",
+        category: "Stablecoin", tags: ["LLAMMA", "Soft Liquidation", "CDP"],
+        summary: "Curveが独自ステーブルcrvUSDを導入。清算を一発で行うのではなく、LLAMMAで価格帯に沿って徐々に担保を売買する設計が特徴。",
+        tech: "LLAMMA、Controller、PegKeeper、Curve pools。",
+        status: "CurveがDEXからステーブル/貸付領域へ拡張。",
+        sources: ["curve"],
+        importance: "major"
+      },
+      {
+        year: 2023, date: "2023-06", name: "Pendle v2 / LSDfi boom",
+        category: "Yield", tags: ["Yield Tokenization", "PT/YT", "Fixed Yield"],
+        summary: "利回り付き資産を元本PTと利回りYTに分解し、将来利回りを売買可能にした。stETH、sDAI、ポイント付き資産の金利市場として急拡大。",
+        tech: "Standardized Yield、Principal Token、Yield Token、専用AMM、implied APY。",
+        status: "金利市場、LST/LRT、ポイント市場の中心的プロトコル。",
+        sources: ["pendle"],
+        importance: "major"
+      },
+      {
+        year: 2023, date: "2023-07", name: "UniswapX",
+        category: "DEX/AMM", tags: ["Intent", "Dutch Auction", "Solver"],
+        summary: "ユーザーがルートを指定せず『この交換を満たして』というインテントを出し、フィラーが最良執行を競うモデルへ。DEXはAMM単体からソルバー市場へ広がった。",
+        tech: "オフチェーン署名注文、Dutch auction、フィラー、MEV内部化。",
+        status: "インテント型取引の代表的設計。",
+        sources: ["univ4", "univ3"],
+        importance: "major"
+      },
+      {
+        year: 2023, date: "2023-07", name: "Lybra / Prisma / Raft",
+        category: "Stablecoin", tags: ["LST-backed stablecoin", "eUSD", "mkUSD"],
+        summary: "stETHなどLSTを担保にステーブルコインを発行するLSDfi系が増加。担保が利回りを生むため、借入と利回りの設計が複雑化した。",
+        tech: "LST担保CDP、利回り分配、peg liquidity、Curve/Convex連携。",
+        status: "一部は縮小・攻撃を経験。LST担保ステーブルの実験群。",
+        sources: ["curve", "convex"],
+        importance: "minor"
+      },
+      {
+        year: 2023, date: "2023-10", name: "dYdX Chain",
+        category: "Derivatives", tags: ["Cosmos Appchain", "Perps", "CLOB"],
+        summary: "dYdXが専用チェーンへ移行し、perps取引をアプリチェーンで高速化。DeFiの一部は汎用スマートコントラクトから専用実行環境へ移った。",
+        tech: "Cosmos appchain、CLOB、USDC collateral、分散バリデータ。",
+        status: "オンチェーンデリバティブのappchain代表。",
+        sources: ["dydx"],
+        importance: "major"
+      },
+      {
+        year: 2023, date: "2023-11", name: "EigenLayer restaking",
+        category: "Infrastructure", tags: ["Restaking", "AVS", "LRT前史"],
+        summary: "ETHやLSTの経済安全性を再利用するRestakingがDeFi担保資産の新しい源泉になった。直接DeFiプロトコルではないが、LRT、Pendleポイント市場、貸付担保へ波及。",
+        tech: "Restaking、Actively Validated Services、LRT、スラッシングリスク。",
+        status: "2024年以降のポイント/利回り市場の中心テーマ。",
+        sources: ["pendle"],
+        importance: "minor"
+      },
+      {
+        year: 2024, date: "2024-01", name: "Morpho Blue / Morpho Vaults",
+        category: "Lending", tags: ["Immutable Lending", "Curators", "Isolated Markets"],
+        summary: "Aave/Compound最適化レイヤーから、独自の不変・許可不要の貸付市場へ。Vault curatorがリスクを選び、利用者はキュレーションされた市場へ預ける構造を広げた。",
+        tech: "孤立市場、oracle/LLTVごとの市場、MetaMorpho vault、curator model。",
+        status: "2024-2026の貸付インフラで存在感が大きい。",
+        sources: ["morpho", "morphoPaper"],
+        importance: "major"
+      },
+      {
+        year: 2024, date: "2024-02", name: "Ethena USDe",
+        category: "Stablecoin", tags: ["Synthetic Dollar", "Delta Hedging", "sUSDe"],
+        summary: "現物暗号資産とショート先物でデルタ中立に近い合成ドルを作る。CeFiデリバティブ市場とDeFi流動性を接続し、sUSDe利回りで急拡大した。",
+        tech: "BTC/ETH等の現物担保、perp/futures short、custody、funding/basis収益。",
+        status: "合成ドル・ベーシストレード型ステーブルの代表。",
+        sources: ["ethena"],
+        importance: "major"
+      },
+      {
+        year: 2024, date: "2024-03", name: "Aerodrome on Base",
+        category: "DEX/AMM", tags: ["Base", "ve(3,3)", "L2 liquidity hub"],
+        summary: "Velodrome型のve(3,3) DEXをBaseで展開し、チェーンの流動性ハブになった。L2ごとに中核DEXが経済圏を作る流れを示した。",
+        tech: "Gauge、Bribe、veNFT、stable/volatile pools、L2ネイティブ流動性。",
+        status: "Base DeFiの代表的インフラ。",
+        sources: ["convexGauge", "balancerWeighted"],
+        importance: "minor"
+      },
+      {
+        year: 2024, date: "2024-04", name: "LRT protocols: Ether.fi / Renzo / Kelp",
+        category: "Yield", tags: ["Liquid Restaking", "Points", "LRT"],
+        summary: "Restakingポジションを流動化し、eETH、ezETHなどのLRTをDeFi担保・Pendle市場へ持ち込んだ。ポイントと将来トークン期待も利回りの一部になった。",
+        tech: "LST/LRT token、EigenLayer delegation、ポイント会計、DeFi collateral。",
+        status: "LSTfiからLRTfiへの拡張。",
+        sources: ["pendle"],
+        importance: "minor"
+      },
+      {
+        year: 2024, date: "2024-05", name: "Ethena integrations and sUSDe collateral",
+        category: "Stablecoin", tags: ["sUSDe", "Collateral", "Basis yield"],
+        summary: "sUSDeが貸付、Pendle、Curve系流動性、ポイント市場に入り、ステーブルコインが単なる決済資産から利回り担保へ変わった。",
+        tech: "ERC4626風利回り資産、PT/YT分解、貸付担保、AMM流動性。",
+        status: "合成ドルとDeFiレゴの接続点。",
+        sources: ["ethena", "pendle"],
+        importance: "minor"
+      },
+      {
+        year: 2024, date: "2024-08", name: "Frax v3 / sFRAX / FXB",
+        category: "Stablecoin", tags: ["RWA yield", "Bonds", "AMO"],
+        summary: "Fraxは初期のfractional algorithmicから、AMO、RWA、sFRAX、Frax Bondsへ設計を変化。ステーブルコインがオンチェーン中央銀行的なサブプロトコル集合へ近づいた。",
+        tech: "AMO、Fraxlend、Fraxswap、sFRAX、FXB、100% CR方針。",
+        status: "FRAXエコシステムとして多機能化。",
+        sources: ["fraxEco", "fraxAmo", "fraxV3"],
+        importance: "major"
+      },
+      {
+        year: 2024, date: "2024-10", name: "Kamino / Solana DeFi resurgence",
+        category: "Lending", tags: ["Solana", "Vault", "Leveraged Liquidity"],
+        summary: "Solana上で貸付、流動性Vault、レバレッジLPが再拡大。Ethereum系DeFiの概念が高速・低コストチェーンで再構成された。",
+        tech: "自動LP vault、借入、ポイント、Solana DEX統合。",
+        status: "マルチチェーンDeFi成熟の一例。",
+        sources: ["yieldSok", "morphoPaper"],
+        importance: "minor"
+      },
+      {
+        year: 2025, date: "2025-01-31", name: "Uniswap v4",
+        category: "DEX/AMM", tags: ["Hooks", "Singleton", "Flash Accounting"],
+        summary: "AMM本体を拡張可能にするHooksを導入し、プールごとに動的手数料、TWAMM、オンチェーン指値、カスタムオラクル等を作れるようにした。",
+        tech: "Hooks、Singleton、Flash Accounting、Dynamic Fees、custom accounting。",
+        status: "AMMをアプリケーション・プラットフォーム化する転換点。",
+        sources: ["univ4"],
+        importance: "major"
+      },
+      {
+        year: 2025, date: "2025頃", name: "Pendle Boros",
+        category: "Derivatives", tags: ["Interest Rate Swap", "Funding Rate", "Orderbook"],
+        summary: "Pendleが固定/変動利回りだけでなく、資金調達率などの金利スワップ市場へ拡張。DeFiがスポット利回りからデリバティブ化した金利市場へ向かった。",
+        tech: "Yield Units、funding rate trading、CLOB、margin、settlement。",
+        status: "金利デリバティブの専門市場として発展中。",
+        sources: ["pendle"],
+        importance: "minor"
+      },
+      {
+        year: 2025, date: "2025頃", name: "Morpho V2 direction",
+        category: "Lending", tags: ["Fixed-rate", "Fixed-term", "Institutional lending"],
+        summary: "可変金利プールから、固定金利・固定期間・より機関投資家向けのオンチェーン貸付へ。DeFi貸付は『常時変動金利プール』だけではなくなった。",
+        tech: "固定期間ローン、intent/auction型マッチング、キュレーション。",
+        status: "2026時点で次世代貸付の有力方向。",
+        sources: ["morpho", "morphoPaper"],
+        importance: "minor"
+      },
+      {
+        year: 2026, date: "2026時点", name: "DeFiの現在地",
+        category: "Infrastructure", tags: ["Composable", "Intent", "Curator", "Risk"],
+        summary: "2018年の『誰でもプールを作れるAMM』から、2026年時点では、フックで拡張されるAMM、キュレーター型貸付、合成ドル、金利市場、Restaking担保、ソルバー執行へ分化した。",
+        tech: "Protocol OS化、モジュール化、リスク分離、専門市場化、オフチェーン競争とオンチェーン決済。",
+        status: "初期の高APY実験は減ったが、リスクは複雑化している。",
+        sources: ["univ4", "pendle", "ethena", "morphoPaper"],
+        importance: "major"
+      }
+    ];
+
+    const supplementalEntries = [
+      {
+        year: 2017, sortKey: "2017-06", date: "2017-06頃", name: "Bancor",
+        category: "DEX/AMM", depth: "core", state: "legacy", chains: ["Ethereum"], tags: ["AMM前史", "Bonding Curve", "Smart Token"],
+        summary: "Uniswap以前に、スマートコントラクトで自動価格付けする発想を広めたプロトコル。Bancor式のリザーブ比率とbonding curveは、後のAMM、トークン販売、単側流動性議論の前史になった。",
+        tech: "Constant reserve ratio、Smart Token、BNTを経由する流動性、後に単側LPとIL保護。",
+        status: "現在の主流AMMとは違うが、AMM思想の歴史では外せない。",
+        sources: ["bancorDocs"], refs: [["Bancor whitepaper", "https://about.bancor.network/protocol/"]]
+      },
+      {
+        year: 2017, sortKey: "2017-07", date: "2017-07頃", name: "0x Protocol",
+        category: "Aggregator", depth: "core", state: "active", chains: ["Ethereum", "Multichain"], tags: ["Relayer", "Off-chain Order", "DEX前史"],
+        summary: "オフチェーン注文とオンチェーン決済を組み合わせたDEXプロトコル。AMM以前の分散取引UXを支え、後にMatchaや0x APIの流動性集約へ発展した。",
+        tech: "署名注文、Relayer、オンチェーン決済、RFQ、aggregator API。",
+        status: "Matcha/0x APIとしてアグリゲーション層に残る。",
+        refs: [["0x docs", "https://docs.0xprotocol.org/"]]
+      },
+      {
+        year: 2017, sortKey: "2017-08", date: "2017頃", name: "EtherDelta / ForkDelta",
+        category: "DEX/AMM", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["Orderbook", "Pre-AMM", "UX史"],
+        summary: "スマートコントラクトDEXの古典。板、入金、注文、キャンセルが重く、UXは厳しかったが、『取引所をオンチェーンに置く』初期の実験だった。",
+        tech: "オンチェーン残高、オフチェーン注文風UI、オンチェーン約定。",
+        status: "現在は歴史的存在。Uniswap型AMMがなぜ勝ったかを理解する比較対象。",
+        refs: [["EtherDelta background", "https://en.wikipedia.org/wiki/EtherDelta"]]
+      },
+      {
+        year: 2017, sortKey: "2017-12", date: "2017-12", name: "MakerDAO Single-Collateral Dai / Sai",
+        category: "Stablecoin", depth: "core", state: "legacy", chains: ["Ethereum"], tags: ["CDP", "Sai", "ETH担保"],
+        summary: "ETHを担保にSaiを発行する最初期の本格的CDP。後のDAI、Vault、清算オークション、安定化手数料の原型になった。",
+        tech: "CDP、ETH過剰担保、MKRガバナンス、清算。",
+        status: "2019年のMulti-Collateral Daiへ移行。",
+        sources: ["makerDocs", "lendingPaper"]
+      },
+      {
+        year: 2018, sortKey: "2018-02", date: "2018頃", name: "Dharma / Dharma Lever",
+        category: "Lending", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["P2P Lending", "固定期間", "UX"],
+        summary: "Compound/Aave型プールが支配的になる前のP2P貸付・固定条件貸付の代表例。DeFiが『銀行のようなUX』を模索していた段階を示す。",
+        tech: "P2P loan、固定条件、ウォレット一体型UX。",
+        status: "Dharmaは後にOpenSeaへ買収。プロトコルとしては歴史化。",
+        refs: [["Dharma background", "https://en.wikipedia.org/wiki/Dharma_Labs"]]
+      },
+      {
+        year: 2018, sortKey: "2018-04", date: "2018頃", name: "Augur",
+        category: "Prediction", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["Prediction Market", "REP", "Oracle"],
+        summary: "予測市場をEthereum上に置いた初期プロトコル。金融DeFiとは少し違うが、オラクル、分散裁定、マーケット作成の設計で後続へ影響した。",
+        tech: "REPによる結果報告、予測市場、分散オラクル。",
+        status: "利用は限定的だったが、オンチェーン市場設計の前史。",
+        refs: [["Augur docs", "https://augur.gitbook.io/help-center/"]]
+      },
+      {
+        year: 2018, sortKey: "2018-07", date: "2018頃", name: "Kyber Network",
+        category: "DEX/AMM", depth: "major", state: "active", chains: ["Ethereum", "Multichain"], tags: ["Liquidity Network", "Reserve", "Aggregator前史"],
+        summary: "複数のReserveからオンチェーン流動性を集める初期DEX。後にKyberSwap Aggregator、DMM、ElasticなどAMM/集約方向へ変化した。",
+        tech: "Reserveモデル、オンチェーン流動性、DMM/Elastic concentrated liquidity。",
+        status: "KyberSwapとして継続。2023年にはElastic関連の攻撃も経験。",
+        sources: ["kyberDocs"]
+      },
+      {
+        year: 2019, sortKey: "2019-01", date: "2019頃", name: "Nuo Network",
+        category: "Lending", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["Margin", "P2P Lending", "Compound前後"],
+        summary: "初期の貸付・マージン取引プロトコル。Compound/Aaveほど残らなかったが、DeFiが貸付とレバレッジを同時に模索していたことを示す。",
+        tech: "貸付、マージン、スマートコントラクト口座。",
+        status: "歴史的プロトコル。プール型貸付の勝利で影が薄くなった。",
+        refs: [["Nuo Network background", "https://defiprime.com/nuo-network"]]
+      },
+      {
+        year: 2019, sortKey: "2019-02", date: "2019頃", name: "Fulcrum / bZx",
+        category: "Lending", depth: "niche", state: "incident", chains: ["Ethereum"], tags: ["Margin", "Flash Loan", "Oracle Risk"],
+        summary: "貸付とマージン取引を統合した初期プロトコル。2020年のFlash Loan攻撃で、価格オラクルと流動性の脆さがDeFi全体の問題として認識された。",
+        tech: "iToken、pToken、マージン取引、オラクル依存。",
+        status: "攻撃史の教材。後のリスク管理設計に影響。",
+        refs: [["bZx docs archive", "https://bzx.network/"]]
+      },
+      {
+        year: 2019, sortKey: "2019-03", date: "2019頃", name: "InstaDapp",
+        category: "Infrastructure", depth: "major", state: "active", chains: ["Ethereum", "Multichain"], tags: ["Position Manager", "DeFi Smart Account", "Automation"],
+        summary: "Maker、Compound、Aaveなどをまたいでポジション管理するDeFiスマートアカウント。レバレッジ、借換、清算回避をUI/アカウント層で抽象化した。",
+        tech: "DSA、コネクタ、複数プロトコル操作、後にFluidへ展開。",
+        status: "DeFiアカウント抽象化とポジション管理の先駆け。",
+        refs: [["Instadapp docs", "https://docs.instadapp.io/"]]
+      },
+      {
+        year: 2019, sortKey: "2019-04", date: "2019頃", name: "Nexus Mutual",
+        category: "Insurance", depth: "major", state: "active", chains: ["Ethereum"], tags: ["Cover", "Smart Contract Risk", "Mutual"],
+        summary: "スマートコントラクトリスクをカバーする相互保険型プロトコル。DeFiが増えるほど、保険、査定、リスク価格付けが必要になることを示した。",
+        tech: "NXM、資本プール、リスク評価、クレーム審査。",
+        status: "DeFi保険の代表格として継続。",
+        refs: [["Nexus Mutual docs", "https://docs.nexusmutual.io/"]]
+      },
+      {
+        year: 2019, sortKey: "2019-08", date: "2019頃", name: "Idle Finance",
+        category: "Yield", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["Yield Optimizer", "Best Yield", "Risk Tranches"],
+        summary: "Yearn以前/同時期の利回り最適化プロトコル。Compound、Aave、Fulcrumなどの金利差を自動で追う発想を早くから実装した。",
+        tech: "Best Yield、Risk Adjusted、後にPerpetual Yield Tranches。",
+        status: "Yield aggregator研究でよく比較対象に出る。",
+        sources: ["yieldSok", "yieldSurvey"]
+      },
+      {
+        year: 2019, sortKey: "2019-10", date: "2019頃", name: "Sablier",
+        category: "Infrastructure", depth: "niche", state: "active", chains: ["Ethereum", "Multichain"], tags: ["Payment Streaming", "Payroll", "Vest"],
+        summary: "資金を時間で連続的に流すpayment streaming。DeFiの中核ではないが、DAO給与、vesting、継続支払いのオンチェーン化で重要なプリミティブ。",
+        tech: "ERC20 streaming、線形ベスティング、NFT化されたstream。",
+        status: "Superfluid等と並ぶ支払いプリミティブとして継続。",
+        refs: [["Sablier docs", "https://docs.sablier.com/"]]
+      },
+      {
+        year: 2019, sortKey: "2019-11", date: "2019頃", name: "Melon Protocol / Enzyme",
+        category: "Asset Management", depth: "niche", state: "active", chains: ["Ethereum", "Polygon"], tags: ["On-chain Fund", "Vault", "Asset Management"],
+        summary: "オンチェーンでファンドを組成・管理する試み。手数料、許可資産、リスク制限、会計をスマートコントラクト化し、DeFi資産運用の古典になった。",
+        tech: "Vault、Comptroller、Policy、オンチェーンNAV。",
+        status: "Enzymeとして継続。",
+        refs: [["Enzyme docs", "https://docs.enzyme.finance/"]]
+      },
+      {
+        year: 2019, sortKey: "2019-12", date: "2019頃", name: "1inch",
+        category: "Aggregator", depth: "major", state: "active", chains: ["Ethereum", "Multichain"], tags: ["DEX Aggregator", "Pathfinder", "Limit Order"],
+        summary: "複数DEXに注文を分割して最良価格を探すアグリゲータ。AMMが増えたことで、ユーザーはDEXを選ぶのではなく、ルート探索に任せるようになった。",
+        tech: "Pathfinder、aggregation router、limit order、Fusion/RFQ。",
+        status: "DEX集約の代表。",
+        sources: ["inchDocs"]
+      },
+      {
+        year: 2020, sortKey: "2020-02", date: "2020-02頃", name: "Opyn v1",
+        category: "Derivatives", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["Options", "oToken", "Insurance"],
+        summary: "oTokenでオンチェーンオプションを発行・取引する初期プロトコル。カバードオプション、保険、ヘッジをDeFiで表現する基礎実験だった。",
+        tech: "oToken、担保Vault、欧州型オプション、後にSqueeth。",
+        status: "オプションDeFiの前史として重要。",
+        refs: [["Opyn docs", "https://opyn.gitbook.io/opyn/"]]
+      },
+      {
+        year: 2020, sortKey: "2020-03", date: "2020-03頃", name: "UMA",
+        category: "Derivatives", depth: "major", state: "active", chains: ["Ethereum", "Multichain"], tags: ["Optimistic Oracle", "Synthetic", "KPI Options"],
+        summary: "合成資産とOptimistic Oracleを推進。価格を常時オンチェーン取得するのではなく、異議がなければ正しいとみなす設計が、Acrossや予測/保険市場へ広がった。",
+        tech: "Optimistic Oracle、Data Verification Mechanism、合成資産、KPI option。",
+        status: "オラクル/クロスチェーン/インテント系インフラとして継続。",
+        refs: [["UMA docs", "https://docs.uma.xyz/"]]
+      },
+      {
+        year: 2020, sortKey: "2020-04", date: "2020頃", name: "Set Protocol / TokenSets Social Trading",
+        category: "Asset Management", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["Index", "Social Trading", "DeFi Pulse Index前史"],
+        summary: "資産バスケットをERC20化し、トレーダーや戦略をフォローするTokenSetsを展開。後のIndex CoopやDeFi指数商品のUXに影響した。",
+        tech: "SetToken、rebalancing、strategy manager、指数トークン。",
+        status: "Index Coopや構造化商品への系譜。",
+        refs: [["Set Protocol docs", "https://docs.tokensets.com/"]]
+      },
+      {
+        year: 2020, sortKey: "2020-06", date: "2020-06頃", name: "Bancor v2.1",
+        category: "DEX/AMM", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["Single-sided LP", "IL Protection", "BNT"],
+        summary: "単側流動性とImpermanent Loss Protectionを掲げ、Uniswap型LPの痛点に別解を提示した。後に保護設計の負債問題も議論された。",
+        tech: "BNT共通流動性、単側LP、IL protection、プロトコル負債。",
+        status: "AMMリスクをプロトコル側に移す設計の教材。",
+        sources: ["bancorDocs"]
+      },
+      {
+        year: 2020, sortKey: "2020-07", date: "2020-07頃", name: "Mooniswap",
+        category: "DEX/AMM", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["1inch AMM", "Virtual Balance", "MEV/Arb"],
+        summary: "1inchが出したAMM。仮想残高で裁定利益をLPに戻そうとし、AMMにおけるMEV/裁定収益の配分問題を早くから扱った。",
+        tech: "Virtual balance、遅延価格更新、LPへの裁定利益還元。",
+        status: "現在は主流ではないが、MEV-aware AMMの前史。",
+        sources: ["inchDocs", "ammSok"]
+      },
+      {
+        year: 2020, sortKey: "2020-08", date: "2020-08頃", name: "Hegic",
+        category: "Derivatives", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["Options AMM", "HEGIC", "Writers Pool"],
+        summary: "オプションをAMM/プール形式で提供した初期プロトコル。価格付けと流動性供給を簡略化したが、オプション市場の難しさも露呈した。",
+        tech: "Options pool、writer liquidity、ETH/WBTC options。",
+        status: "オンチェーンオプションAMMの歴史的実験。",
+        refs: [["Hegic docs", "https://docs.hegic.co/"]]
+      },
+      {
+        year: 2020, sortKey: "2020-08", date: "2020-08頃", name: "Based Money",
+        category: "Stablecoin", depth: "degen", state: "failed", chains: ["Ethereum"], tags: ["Rebase", "Meme Money", "YAM系"],
+        summary: "Ampleforth/YAM系のリベース実験。経済設計よりもミームと投機が先行し、DeFi Summerの『貨幣を毎週発明する』空気を象徴した。",
+        tech: "Elastic supply、rebase、流動性マイニング。",
+        status: "短命。rebaseトークン乱立期の事例。",
+        sources: ["yieldSurvey"]
+      },
+      {
+        year: 2020, sortKey: "2020-09", date: "2020-09頃", name: "Hotdog / Kimchi / Spaghetti farms",
+        category: "Yield", depth: "degen", state: "failed", chains: ["Ethereum"], tags: ["Food Farm", "Fork", "超短命"],
+        summary: "Sushi/YAM後に乱立した食べ物ファーム群。異常APY、匿名チーム、フォークコード、数日単位の資本移動がDeFi Summerの極端な一面だった。",
+        tech: "MasterChef fork、LP staking、報酬トークン排出。",
+        status: "多くは短命または消滅。傭兵流動性の教材。",
+        sources: ["yieldSok", "yieldSurvey"]
+      },
+      {
+        year: 2020, sortKey: "2020-09", date: "2020-09頃", name: "Swerve / Saddle",
+        category: "DEX/AMM", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["Curve fork", "StableSwap", "Fair Launch"],
+        summary: "CurveのStableSwap設計をフォーク/再実装したステーブルAMM群。Curve支配への対抗、フェアローンチ、ライセンス/実装差が論点になった。",
+        tech: "StableSwap invariant、メタプール、ステーブル資産交換。",
+        status: "本家Curveほど残らなかったが、StableSwap拡散の事例。",
+        refs: [["Saddle docs", "https://docs.saddle.finance/"]]
+      },
+      {
+        year: 2020, sortKey: "2020-10", date: "2020-10頃", name: "Cover Protocol",
+        category: "Insurance", depth: "niche", state: "failed", chains: ["Ethereum"], tags: ["Cover", "Yearn ecosystem", "Tokenized Insurance"],
+        summary: "DeFi保険をトークン化して取引する試み。Yearn周辺で注目されたが、脆弱性や運営問題を経て短命に終わった。",
+        tech: "Claim/NoClaim token、保険マーケット、償還。",
+        status: "保険プロトコルの難しさを示す歴史的事例。",
+        refs: [["Cover Protocol background", "https://rekt.news/cover-rekt/"]]
+      },
+      {
+        year: 2020, sortKey: "2020-11", date: "2020-11頃", name: "Empty Set Dollar / Basis Cash",
+        category: "Stablecoin", depth: "degen", state: "failed", chains: ["Ethereum"], tags: ["Algorithmic Stablecoin", "Seigniorage", "Coupons"],
+        summary: "担保なし/低担保でドルペッグを維持しようとしたアルゴリズムステーブル実験。債券/クーポン/株式風トークンで収縮と拡張を制御しようとした。",
+        tech: "Seigniorage shares、bond/coupon、rebase/epoch。",
+        status: "多くはペッグ維持に失敗。Terra以前の重要な警告。",
+        refs: [["Basis Cash docs archive", "https://docs.basiscash.io/"]]
+      },
+      {
+        year: 2020, sortKey: "2020-12", date: "2020-12頃", name: "PancakeSwap / Venus on BNB Chain",
+        category: "DEX/AMM", depth: "major", state: "active", chains: ["BNB"], tags: ["Alt-L1", "BSC", "低手数料DeFi"],
+        summary: "Ethereumの高ガスを避け、BNB Chain上でUniswap/Compound系を高速・低コストに展開。2021年のAlt-L1 DeFiサイクルの基盤になった。",
+        tech: "AMM、MasterChef farm、Compound fork lending、BEP-20。",
+        status: "PancakeSwapはマルチチェーンDEXとして継続。",
+        refs: [["PancakeSwap docs", "https://docs.pancakeswap.finance/"], ["Venus docs", "https://docs-v4.venus.io/"]]
+      },
+      {
+        year: 2021, sortKey: "2021-01", date: "2021-01頃", name: "Lido stETH",
+        category: "LST/Restaking", depth: "core", state: "active", chains: ["Ethereum"], tags: ["Liquid Staking", "stETH", "LST"],
+        summary: "ETHステーキングをstETHとして流動化。Merge後、stETHはCurve、Aave、Maker、Pendle、Restaking市場の基礎担保になった。",
+        tech: "Liquid staking token、validator set、withdrawal queue、DeFi collateral。",
+        status: "Ethereum DeFi最大級の担保プリミティブ。",
+        sources: ["lidoDocs"]
+      },
+      {
+        year: 2021, sortKey: "2021-02", date: "2021-02頃", name: "C.R.E.A.M. Iron Bank",
+        category: "Lending", depth: "niche", state: "incident", chains: ["Ethereum"], tags: ["Credit Line", "Protocol-to-Protocol", "Under-collateralized"],
+        summary: "選ばれたプロトコルへ無担保/低担保の信用枠を与える実験。DeFiで信用を持ち込む試みだったが、リスクと攻撃の難しさが大きかった。",
+        tech: "プロトコル信用枠、whitelist、Yearn/Alpha周辺連携。",
+        status: "複数インシデントを経て、信用貸付の難しさを示した。",
+        sources: ["lendingPaper"], refs: [["Cream docs", "https://docs.cream.finance/"]]
+      },
+      {
+        year: 2021, sortKey: "2021-03", date: "2021-03頃", name: "PancakeBunny",
+        category: "Yield", depth: "incident", state: "incident", chains: ["BNB"], tags: ["Yield Optimizer", "Oracle Manipulation", "BSC"],
+        summary: "BNB Chainの自動複利Vault。2021年の価格操作攻撃で、低手数料チェーンでもオラクル/ミント設計が弱いと大規模被害になることを示した。",
+        tech: "Vault、auto-compound、AMM価格依存、報酬ミント。",
+        status: "BSC DeFi攻撃史の代表例。",
+        sources: ["rektLeaderboard", "yieldSurvey"]
+      },
+      {
+        year: 2021, sortKey: "2021-04", date: "2021-04頃", name: "Element Finance",
+        category: "Yield", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["Fixed Yield", "Principal/Yield Split", "Term"],
+        summary: "利回り資産を元本と利息に分け、固定利回りを作るプロトコル。Pendle、Sense、Swivelなどと同じ固定利回り/金利市場の初期波。",
+        tech: "Principal token、Yield token、fixed-rate markets、AMM。",
+        status: "固定利回り設計の重要な実験。",
+        refs: [["Element docs", "https://docs.element.fi/"]]
+      },
+      {
+        year: 2021, sortKey: "2021-04", date: "2021-04頃", name: "88mph",
+        category: "Yield", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["Fixed Yield", "Floating Yield", "Structured Product"],
+        summary: "預金者に固定利回りを提供し、変動利回り部分を別の参加者に渡す構造化商品。DeFi固定金利のマニアックな初期例。",
+        tech: "固定利回り預金、floating-rate bond、MPH rewards。",
+        status: "大規模主流化はしなかったが、金利商品史で重要。",
+        refs: [["88mph docs", "https://docs.88mph.app/"]]
+      },
+      {
+        year: 2021, sortKey: "2021-05", date: "2021-05頃", name: "Rari Capital / Fuse",
+        category: "Lending", depth: "major", state: "incident", chains: ["Ethereum"], tags: ["Permissionless Lending", "Isolated Pools", "Fei merger"],
+        summary: "誰でも貸付プールを作れるFuseで、ロングテール担保市場を開いた。攻撃やFeiとの統合を経つつ、孤立貸付市場の発想はEuler/Morpho/Siloへつながった。",
+        tech: "Fuse pool、カスタム担保、プール単位リスク、cToken系。",
+        status: "歴史的には非常に重要だが、本体は後退。",
+        sources: ["morphoPaper", "lendingPaper"]
+      },
+      {
+        year: 2021, sortKey: "2021-05", date: "2021-05頃", name: "Iron Finance / TITAN",
+        category: "Stablecoin", depth: "incident", state: "failed", chains: ["Polygon"], tags: ["Partial Collateral", "Bank Run", "Frax fork"],
+        summary: "FRAX風の部分担保ステーブルIRONとTITANがPolygonで急拡大し、取り付け騒ぎで崩壊。DeFiでの『bank run』事例として広く引用される。",
+        tech: "USDC部分担保、TITAN吸収、動的担保率、償還スパイラル。",
+        status: "失敗事例。アルゴリズム/部分担保型の反射性を示した。",
+        refs: [["Iron Finance background", "https://en.wikipedia.org/wiki/Iron_Finance"]]
+      },
+      {
+        year: 2021, sortKey: "2021-06", date: "2021-06頃", name: "Thorchain",
+        category: "DEX/AMM", depth: "major", state: "active", chains: ["Bitcoin", "Cosmos", "Multichain"], tags: ["Native Cross-chain", "RUNE", "BTC liquidity"],
+        summary: "wrapped tokenではなく、ネイティブBTC等をクロスチェーンで交換する流動性ネットワーク。BitcoinをDeFi流動性へ接続する別系統の重要プロトコル。",
+        tech: "RUNEを共通決済資産にしたAMM、TSS、ノード担保、クロスチェーンVault。",
+        status: "攻撃を経験しつつ、ネイティブクロスチェーンDEXとして継続。",
+        refs: [["THORChain docs", "https://docs.thorchain.org/"]]
+      },
+      {
+        year: 2021, sortKey: "2021-06", date: "2021-06頃", name: "Notional Finance",
+        category: "Lending", depth: "major", state: "active", chains: ["Ethereum", "L2"], tags: ["Fixed Rate", "fCash", "Term Lending"],
+        summary: "固定金利・固定満期の貸付市場をオンチェーンで提供。変動金利プール中心だったCompound/Aave系に対する重要な別解。",
+        tech: "fCash、AMM for fixed rates、maturity、Vaults。",
+        status: "固定金利DeFiの代表。",
+        sources: ["notionalDocs"]
+      },
+      {
+        year: 2021, sortKey: "2021-07", date: "2021-07頃", name: "Ribbon Theta Vaults",
+        category: "Derivatives", depth: "major", state: "legacy", chains: ["Ethereum"], tags: ["DOV", "Options Vault", "Covered Call"],
+        summary: "カバードコール/プット売りをVault化し、オプション戦略を預金のように提供。DeFi Options Vaultブームを作った。",
+        tech: "Theta Vault、週次オプション、auction、structured yield。",
+        status: "後にAevo/Derive系のデリバティブプロダクトへ発展。",
+        refs: [["Ribbon docs", "https://docs.ribbon.finance/"]]
+      },
+      {
+        year: 2021, sortKey: "2021-07", date: "2021-07頃", name: "Lyra",
+        category: "Derivatives", depth: "niche", state: "legacy", chains: ["L2"], tags: ["Options AMM", "Optimism", "Volatility"],
+        summary: "Optimism上のオプションAMM。オンチェーンオプションでボラティリティ、ヘッジ、LPリスクをどう扱うかを試した。",
+        tech: "Black-Scholes系価格、ボラサーフェス、マーケットメイカーボールト。",
+        status: "後にDeriveへリブランド/発展。",
+        sources: ["lyraDocs"], refs: [["Derive docs", "https://docs.derive.xyz/"]]
+      },
+      {
+        year: 2021, sortKey: "2021-08", date: "2021-08頃", name: "Dopex",
+        category: "Derivatives", depth: "niche", state: "legacy", chains: ["L2"], tags: ["SSOV", "Atlantic Options", "Arbitrum"],
+        summary: "Arbitrumのオプションプロトコル。SSOVやAtlantic Optionsで、オプション売り・流動性・構造化商品をゲーム化した。",
+        tech: "Single Staking Option Vault、Atlantic options、DPX/rDPX。",
+        status: "オプションDeFiの熱狂期を代表する一つ。",
+        refs: [["Dopex docs", "https://docs.dopex.io/"]]
+      },
+      {
+        year: 2021, sortKey: "2021-08", date: "2021-08頃", name: "Anchor Protocol",
+        category: "Yield", depth: "incident", state: "failed", chains: ["Terra"], tags: ["UST", "Subsidized Yield", "Terra"],
+        summary: "UST預金に高利回りを提供し、Terra経済圏の需要エンジンになった。利回り源泉と補助金の持続性が崩れると、UST崩壊へつながった。",
+        tech: "bLUNA/bETH担保貸付、UST deposit、yield reserve。",
+        status: "2022年Terra崩壊の中心的プロトコル。",
+        refs: [["Anchor docs archive", "https://docs.anchorprotocol.com/"]]
+      },
+      {
+        year: 2021, sortKey: "2021-09", date: "2021-09頃", name: "Mirror Protocol",
+        category: "Derivatives", depth: "incident", state: "failed", chains: ["Terra"], tags: ["Synthetic Stocks", "mAssets", "Terra"],
+        summary: "株式価格に連動するmAssetsをTerra上で発行・取引した。合成株式DeFiの代表だったが、規制・オラクル・Terra崩壊で歴史化した。",
+        tech: "mAsset、過剰担保、Terraswap流動性、oracle price。",
+        status: "Terra崩壊とともに事実上終了。",
+        refs: [["Mirror docs archive", "https://docs.mirror.finance/"]]
+      },
+      {
+        year: 2021, sortKey: "2021-09", date: "2021-09頃", name: "GMX v1 launch wave",
+        category: "Derivatives", depth: "major", state: "active", chains: ["L2", "Avalanche"], tags: ["GLP", "Oracle Perps", "Real Yield"],
+        summary: "Arbitrum/AvalancheでperpsとGLP流動性を拡大。2022年の『real yield』 narrativaでは、排出より手数料収益が評価された。",
+        tech: "GLP、oracle execution、multi-asset pool、funding/borrow fee。",
+        status: "v2へ移行しつつ、オンチェーンperpsの代表。",
+        sources: ["gmx"]
+      },
+      {
+        year: 2021, sortKey: "2021-10", date: "2021-10頃", name: "Olympus forks / Wonderland",
+        category: "Governance", depth: "degen", state: "failed", chains: ["Ethereum", "Avalanche", "Multichain"], tags: ["OHM fork", "(3,3)", "APY mania"],
+        summary: "OHM型の高APY、Bond、Treasuryモデルが各チェーンへ大量フォークされた。Wonderlandは最大級だったが、運営・信頼問題でDeFi 2.0熱狂の終わりを象徴した。",
+        tech: "Bonding、rebase staking、treasury backing、POL。",
+        status: "多くは崩壊または縮小。POL思想だけが残った。",
+        sources: ["olympus", "olympusPol"]
+      },
+      {
+        year: 2021, sortKey: "2021-10", date: "2021-10頃", name: "Redacted Cartel / Votium / Hidden Hand",
+        category: "Governance", depth: "niche", state: "legacy", chains: ["Ethereum"], tags: ["Bribe", "Meta-governance", "Curve Wars"],
+        summary: "Curve/Convexの投票権をめぐり、bribe市場とメタガバナンス資産を集めるプロトコルが登場。流動性排出の投票権が取引可能な市場になった。",
+        tech: "vlCVX bribes、投票市場、BTRFLY、報酬マーケットプレイス。",
+        status: "veToken経済圏の政治市場として重要。",
+        sources: ["convexGauge"]
+      },
+      {
+        year: 2021, sortKey: "2021-11", date: "2021-11頃", name: "Rocket Pool rETH",
+        category: "LST/Restaking", depth: "major", state: "active", chains: ["Ethereum"], tags: ["Liquid Staking", "Minipool", "rETH"],
+        summary: "より分散志向のLiquid Staking。Lido stETHと比較されることが多く、ノード運営者の参入単位を下げるminipool設計が特徴。",
+        tech: "rETH、minipool、RPL collateral、permissionless node operators。",
+        status: "LST市場の主要プレイヤー。",
+        sources: ["rocketDocs", "rocketJa", "rocketZh", "rocketKo"]
+      },
+      {
+        year: 2022, sortKey: "2022-01", date: "2022-01頃", name: "Silo Finance",
+        category: "Lending", depth: "niche", state: "active", chains: ["Ethereum", "L2"], tags: ["Isolated Lending", "Risk Isolation", "Silo"],
+        summary: "各資産のリスクをSilo単位で隔離する貸付設計。ロングテール資産を扱うには、Compound型の共有リスクではなく分離が必要だと示した。",
+        tech: "isolated markets、bridge asset、oracle/LLTV分離、Silo Vaults。",
+        status: "Silo v3として継続。",
+        sources: ["siloDocs"]
+      },
+      {
+        year: 2022, sortKey: "2022-02", date: "2022-02頃", name: "Gearbox",
+        category: "Lending", depth: "major", state: "active", chains: ["Ethereum", "L2"], tags: ["Credit Account", "Leveraged DeFi", "Composable Leverage"],
+        summary: "ユーザーに信用口座を作り、その口座がYearn/Curve/Uniswap等を使えるようにするレバレッジ基盤。単なる貸付ではなく、DeFi操作を担保内に閉じ込める。",
+        tech: "Credit Account、allowed protocol adapters、health factor、レバレッジ戦略。",
+        status: "コンポーザブル・レバレッジの代表。",
+        sources: ["gearboxDocs"]
+      },
+      {
+        year: 2022, sortKey: "2022-03", date: "2022-03頃", name: "Maple / Goldfinch private credit",
+        category: "RWA", depth: "major", state: "active", chains: ["Ethereum", "Base", "Solana"], tags: ["Private Credit", "Under-collateralized", "RWA"],
+        summary: "過剰担保ではなく、実世界の借り手・信用評価・プールデリゲートに基づくオンチェーン信用市場。CeFi破綻期には信用リスクも露呈した。",
+        tech: "Pool delegate、KYC、固定金利ローン、private credit、real-world borrower。",
+        status: "RWA/オンチェーン信用市場として再編し継続。",
+        sources: ["mapleDocs", "goldfinchDocs"]
+      },
+      {
+        year: 2022, sortKey: "2022-05", date: "2022-05頃", name: "Osmosis / Cosmos DeFi",
+        category: "DEX/AMM", depth: "major", state: "active", chains: ["Cosmos"], tags: ["Appchain DEX", "IBC", "Superfluid Staking"],
+        summary: "Cosmos圏のDEX appchain。IBCで接続された資産を扱い、AMM、superfluid staking、チェーン固有ガバナンスを組み合わせた。",
+        tech: "Cosmos SDK、IBC、AMM pools、superfluid staking。",
+        status: "Cosmos DeFiの中核。",
+        refs: [["Osmosis docs", "https://docs.osmosis.zone/"]]
+      },
+      {
+        year: 2022, sortKey: "2022-06", date: "2022-06頃", name: "Morpho Optimizer",
+        category: "Lending", depth: "major", state: "legacy", chains: ["Ethereum"], tags: ["Peer-to-peer Matching", "Aave/Compound Optimizer", "Rates"],
+        summary: "Aave/Compoundの上で貸し手と借り手をP2Pマッチし、双方の金利を改善するレイヤー。後のMorpho Blueとは違い、既存money marketの最適化だった。",
+        tech: "P2P matching、fallback to pool、rate optimizer。",
+        status: "Morpho Blue以前の重要段階。",
+        sources: ["morpho", "morphoPaper"]
+      },
+      {
+        year: 2022, sortKey: "2022-07", date: "2022-07頃", name: "Gains Network gTrade",
+        category: "Derivatives", depth: "niche", state: "active", chains: ["Polygon", "L2"], tags: ["Synthetic Perps", "Forex", "gDAI"],
+        summary: "暗号資産だけでなくFX、株価指数、商品などを合成perpsとして提供。LPはgDAI Vaultでトレーダーの損益相手になる。",
+        tech: "Oracle-based synthetic leverage、gDAI vault、multi-asset perps。",
+        status: "オンチェーンperpsの非暗号資産拡張例。",
+        sources: ["gainsDocs"]
+      },
+      {
+        year: 2022, sortKey: "2022-08", date: "2022-08頃", name: "Ajna Protocol",
+        category: "Lending", depth: "niche", state: "active", chains: ["Ethereum"], tags: ["Oracleless Lending", "Permissionless", "Auction"],
+        summary: "オラクルやガバナンスに依存しない貸付市場を目指す設計。貸し手が価格バケットへ流動性を置き、清算と金利が市場的に決まる。",
+        tech: "oracleless lending、price buckets、auctions、permissionless pools。",
+        status: "マニアックだが、オラクル依存を避ける貸付設計として重要。",
+        refs: [["Ajna docs", "https://docs.ajna.finance/"]]
+      },
+      {
+        year: 2022, sortKey: "2022-09", date: "2022-09頃", name: "Radiant Capital",
+        category: "Lending", depth: "niche", state: "incident", chains: ["L2", "Multichain"], tags: ["Omnichain Lending", "LayerZero", "Arbitrum"],
+        summary: "複数チェーンにまたがる貸付市場を掲げた。クロスチェーン展開はUXを広げる一方、ブリッジ/実装/オラクル/管理リスクを増幅する。",
+        tech: "omnichain money market、LayerZero messaging、RDNT incentives。",
+        status: "成長とインシデントの両面を経験。",
+        refs: [["Radiant docs", "https://docs.radiant.capital/"]]
+      },
+      {
+        year: 2022, sortKey: "2022-10", date: "2022-10頃", name: "CowSwap / CoW Protocol",
+        category: "Aggregator", depth: "major", state: "active", chains: ["Ethereum", "L2"], tags: ["Intent", "Batch Auction", "MEV Protection"],
+        summary: "ユーザー注文をbatch auctionに入れ、ソルバーがCoWや外部流動性で最良執行を探す。UniswapX以前からインテント型DEXの方向を示していた。",
+        tech: "trade intents、batch auctions、solvers、Coincidence of Wants、MEV protection。",
+        status: "インテント/ソルバーDEXの代表。",
+        refs: [["CoW Protocol docs", "https://docs.cow.fi/cow-protocol/"]]
+      },
+      {
+        year: 2022, sortKey: "2022-11", date: "2022-11頃", name: "Perennial",
+        category: "Derivatives", depth: "niche", state: "active", chains: ["Ethereum", "L2"], tags: ["Derivatives Infrastructure", "Oracle-settled", "Power Perps"],
+        summary: "汎用デリバティブ市場を作るインフラ。取引アプリというより、任意のペイオフ/マーケットを構築する基盤に近い。",
+        tech: "oracle-settled derivatives、maker/taker vault、collateral accounts。",
+        status: "デリバティブをプリミティブ化する流れの一部。",
+        refs: [["Perennial docs", "https://docs.perennial.finance/"]]
+      },
+      {
+        year: 2023, sortKey: "2023-01", date: "2023-01頃", name: "Trader Joe Liquidity Book",
+        category: "DEX/AMM", depth: "major", state: "active", chains: ["Avalanche", "Multichain"], tags: ["DLMM", "Bins", "Concentrated Liquidity"],
+        summary: "価格を離散的なbinに分けるLiquidity Bookで、Uniswap v3とは違う集中流動性UXを提示。Avalanche DeFiの基幹DEXとして存在感を持った。",
+        tech: "discretized liquidity bins、variable fee、custom liquidity shapes。",
+        status: "LFJとしてAvalanche/Monad等へ展開。",
+        refs: [["LFJ docs", "https://docs.lfj.gg/"]]
+      },
+      {
+        year: 2023, sortKey: "2023-02", date: "2023-02頃", name: "Maverick",
+        category: "DEX/AMM", depth: "major", state: "active", chains: ["Ethereum", "L2"], tags: ["Dynamic Distribution AMM", "Directional LP", "Auto-rebalance"],
+        summary: "価格移動に合わせて流動性分布を自動移動するDynamic Distribution AMM。LPが片方向に追随する戦略を選べる点が特徴。",
+        tech: "dynamic liquidity distribution、modes、directional LP、veFlywheel。",
+        status: "集中流動性の運用負担をAMM側で減らす試み。",
+        sources: ["maverickDocs"]
+      },
+      {
+        year: 2023, sortKey: "2023-03", date: "2023-03頃", name: "Ambient / CrocSwap",
+        category: "DEX/AMM", depth: "niche", state: "active", chains: ["Ethereum", "L2"], tags: ["Singleton DEX", "Ambient Liquidity", "Knockout Liquidity"],
+        summary: "DEX全体を単一コントラクトに入れ、集中流動性、通常流動性、指値風knockout liquidityを同一曲線で扱う。Uniswap v4以前のシングルトン型AMMとして面白い。",
+        tech: "single contract DEX、ambient + concentrated liquidity、knockout liquidity、surplus collateral。",
+        status: "技術志向の高いAMM実験。",
+        sources: ["ambientDocs"]
+      },
+      {
+        year: 2023, sortKey: "2023-03", date: "2023-03頃", name: "Panoptic",
+        category: "Derivatives", depth: "niche", state: "emerging", chains: ["Ethereum"], tags: ["Perpetual Options", "Uniswap v3", "Oracle-free"],
+        summary: "Uniswap v3 LPポジションをオプション的に解釈し、満期なし・オラクルなしのオプション市場を作る。CLAMMがデリバティブ基盤になる好例。",
+        tech: "perpetual options、Uniswap v3 liquidity、streaming premium、oracle-free settlement。",
+        status: "オプション設計の先端的実験。",
+        refs: [["Panoptic paper", "https://arxiv.org/abs/2204.14232"], ["Panoptic docs", "https://panoptic.xyz/docs/"]]
+      },
+      {
+        year: 2023, sortKey: "2023-05", date: "2023-05頃", name: "Ondo OUSG / USDY",
+        category: "RWA", depth: "major", state: "active", chains: ["Ethereum", "Multichain", "RWA"], tags: ["Tokenized Treasuries", "USDY", "OUSG"],
+        summary: "米国債等をトークン化し、オンチェーンでRWA利回りへアクセスする代表例。RWAブームでDeFi利回りの源泉を暗号資産外へ広げた。",
+        tech: "tokenized note/fund、KYC、redemption、secondary transfer restrictions。",
+        status: "RWAセクターの主要プロトコル。",
+        sources: ["ondoDocs"]
+      },
+      {
+        year: 2023, sortKey: "2023-08", date: "2023-08頃", name: "Aerodrome",
+        category: "DEX/AMM", depth: "major", state: "active", chains: ["L2"], tags: ["Base", "ve(3,3)", "Liquidity Hub"],
+        summary: "Base上のve(3,3) DEX。Velodrome型のBribe/Gauge/veNFT設計をチェーンの中核流動性ハブにした。",
+        tech: "veAERO、gauge voting、bribes、stable/volatile pools。",
+        status: "Base DeFiの代表的流動性レイヤー。",
+        refs: [["Aerodrome docs", "https://aerodrome.finance/docs"]]
+      },
+      {
+        year: 2023, sortKey: "2023-09", date: "2023-09頃", name: "Friend.tech keys and SocialFi liquidity",
+        category: "Other", depth: "degen", state: "legacy", chains: ["L2"], tags: ["SocialFi", "Bonding Curve", "Base"],
+        summary: "厳密にはDeFi中核ではないが、bonding curveで人間関係/アクセス権を価格付けし、Base上の投機的流動性を呼び込んだ。",
+        tech: "bonding curve shares、fees、social access tokenization。",
+        status: "短命熱狂。金融プリミティブがソーシャル領域へ漏れ出した事例。",
+        refs: [["Friend.tech background", "https://en.wikipedia.org/wiki/Friend.tech"]]
+      },
+      {
+        year: 2023, sortKey: "2023-10", date: "2023-10頃", name: "Prisma / Lybra / Raft LSD stablecoins",
+        category: "Stablecoin", depth: "niche", state: "incident", chains: ["Ethereum"], tags: ["LST-backed Stablecoin", "LSDfi", "Curve/Convex"],
+        summary: "LSTを担保にステーブルを発行し、Curve/Convexで流動性を作るプロトコル群。利回り付き担保がステーブル発行の材料になった一方、攻撃やペッグ管理も難しかった。",
+        tech: "LST collateral、CDP、Curve liquidity、bribes、redemption。",
+        status: "LSDfiブームの象徴。一部は攻撃・縮小を経験。",
+        sources: ["curve", "convex"]
+      },
+      {
+        year: 2024, sortKey: "2024-01", date: "2024-01頃", name: "Term Finance",
+        category: "Lending", depth: "niche", state: "active", chains: ["Ethereum"], tags: ["Fixed-term Repo", "Auction", "Institutional DeFi"],
+        summary: "固定期間・オークション型の貸付市場。DeFi貸付を常時変動金利プールから、伝統金融に近いterm repo/auctionへ近づける。",
+        tech: "term auctions、fixed-rate borrowing/lending、collateralized lending。",
+        status: "機関向け・固定期間貸付の流れで重要。",
+        refs: [["Term Finance docs", "https://docs.term.finance/"]]
+      },
+      {
+        year: 2024, sortKey: "2024-02", date: "2024-02頃", name: "Fluid / Instadapp Liquidity Layer",
+        category: "Lending", depth: "major", state: "active", chains: ["Ethereum", "L2"], tags: ["Liquidity Layer", "Lending + DEX", "Smart Debt"],
+        summary: "Instadapp系のFluidは、貸付、Vault、DEX流動性を統合する方向へ進んだ。貸付市場とDEXを別物ではなく、共通流動性レイヤーとして扱う。",
+        tech: "Fluid Vaults、Smart Collateral、Smart Debt、Fluid DEX。",
+        status: "2024-2026の統合DeFiインフラ候補。",
+        refs: [["Fluid docs", "https://docs.fluid.instadapp.io/"]]
+      },
+      {
+        year: 2024, sortKey: "2024-03", date: "2024-03頃", name: "Ethena USDe / sUSDe expansion",
+        category: "Stablecoin", depth: "core", state: "active", chains: ["Ethereum", "Multichain"], tags: ["Synthetic Dollar", "Basis Trade", "sUSDe"],
+        summary: "現物担保と先物ショートでデルタ中立に近い合成ドルを作り、sUSDeでbasis/funding利回りを配る。DeFiとCeFiデリバティブ市場の接続が主戦場になった。",
+        tech: "delta hedging、custody、perp/futures short、basis yield、staking receipt。",
+        status: "合成ドルの代表。取引所/カストディ/資金調達率リスクが論点。",
+        sources: ["ethena"]
+      },
+      {
+        year: 2024, sortKey: "2024-04", date: "2024-04頃", name: "Ether.fi / Renzo / Kelp / Puffer LRTs",
+        category: "LST/Restaking", depth: "major", state: "active", chains: ["Ethereum"], tags: ["Liquid Restaking", "LRT", "Points"],
+        summary: "EigenLayer restakingポジションを流動化し、LRTをDeFi担保・Pendle市場へ持ち込んだ。利回りはステーキング報酬だけでなく、ポイントと将来期待を含むようになった。",
+        tech: "LRT、operator delegation、AVS exposure、points accounting、withdrawal queue。",
+        status: "LRTfi/ポイント市場の中心。",
+        sources: ["eigenDocs", "pendle"]
+      },
+      {
+        year: 2024, sortKey: "2024-05", date: "2024-05頃", name: "Symbiotic / Karak restaking alternatives",
+        category: "LST/Restaking", depth: "emerging", state: "active", chains: ["Ethereum", "Multichain"], tags: ["Restaking", "Shared Security", "Multi-asset"],
+        summary: "EigenLayer以外のrestaking/shared security基盤が登場。ETHだけでなく複数資産や独自AVS/Networksをどう担保化するかが競争点になった。",
+        tech: "shared security、vaults、operators、slashable collateral、multi-asset restaking。",
+        status: "Restaking市場の競争層。",
+        refs: [["Symbiotic docs", "https://docs.symbiotic.fi/"], ["Karak docs", "https://docs.karak.network/"]]
+      },
+      {
+        year: 2024, sortKey: "2024-06", date: "2024-06頃", name: "Usual USD0",
+        category: "Stablecoin", depth: "emerging", state: "active", chains: ["Ethereum"], tags: ["RWA Stablecoin", "T-bills", "Protocol-owned Stablecoin"],
+        summary: "短期国債等を裏付けにしたUSD0と、利回り/所有権をトークン設計へ組み込むRWAステーブル。ステーブルコインがプロトコル所有・収益分配の設計問題になった。",
+        tech: "RWA-backed stablecoin、USD0/USD0++、governance/revenue tokenization。",
+        status: "RWAステーブルの新興例。",
+        refs: [["Usual docs", "https://docs.usual.money/"]]
+      },
+      {
+        year: 2024, sortKey: "2024-07", date: "2024-07頃", name: "Elixir / deUSD",
+        category: "Stablecoin", depth: "emerging", state: "active", chains: ["Ethereum", "Multichain"], tags: ["Synthetic Dollar", "Orderbook Liquidity", "deUSD"],
+        summary: "取引所/オーダーブック流動性と合成ドルを接続する流れ。Ethena以後、basis yieldや取引所流動性をDeFi資産化する競争が増えた。",
+        tech: "deUSD、validator/liquidity network、basis/market-neutral yield。",
+        status: "合成ドル競争の一角。",
+        refs: [["Elixir docs", "https://docs.elixir.xyz/"]]
+      },
+      {
+        year: 2024, sortKey: "2024-09", date: "2024-09頃", name: "Hyperliquid",
+        category: "Derivatives", depth: "major", state: "active", chains: ["Appchain"], tags: ["Perps", "On-chain CLOB", "Appchain"],
+        summary: "独自実行環境で高速なperps CLOBを提供。『DeFi』と中央集権取引所UXの境界を押し広げ、アプリ専用チェーン/実行環境の優位性を示した。",
+        tech: "CLOB、perps、custom chain、vaults、builder/user liquidity。",
+        status: "2024-2026のperps市場で存在感が大きい。",
+        refs: [["Hyperliquid docs", "https://hyperliquid.gitbook.io/hyperliquid-docs/"]]
+      },
+      {
+        year: 2024, sortKey: "2024-10", date: "2024-10頃", name: "Bunni v2 / Uniswap v4 Hook AMMs",
+        category: "DEX/AMM", depth: "emerging", state: "active", chains: ["Ethereum", "L2"], tags: ["Hooks", "Liquidity Management", "Uniswap v4"],
+        summary: "Uniswap v4 Hooksを前提に、動的手数料、リバランス、特殊会計、LP管理をAMM側へ組み込む新世代。v4は単体DEXではなく拡張エコシステムを生む。",
+        tech: "v4 hooks、custom accounting、dynamic fee、LP vault。",
+        status: "Hook型AMMの初期波。",
+        sources: ["univ4"], refs: [["Bunni docs", "https://docs.bunni.xyz/"]]
+      },
+      {
+        year: 2025, sortKey: "2025-02", date: "2025頃", name: "Euler v2 / modular lending revival",
+        category: "Lending", depth: "emerging", state: "active", chains: ["Ethereum", "L2"], tags: ["Modular Lending", "Vaults", "Risk Curator"],
+        summary: "攻撃後のEulerは、よりモジュール型・Vault型の貸付インフラへ再設計された。Morpho、Silo、Fluidと並び、貸付は市場作成とリスクキュレーションの競争になった。",
+        tech: "EVK、EVC、vault lending、risk-managed markets。",
+        status: "次世代貸付インフラの一角。",
+        sources: ["eulerDocs"]
+      },
+      {
+        year: 2025, sortKey: "2025-03", date: "2025頃", name: "Aave Umbrella / GHO maturity",
+        category: "Lending", depth: "emerging", state: "active", chains: ["Ethereum", "L2"], tags: ["Safety Module", "GHO", "Risk Backstop"],
+        summary: "大規模貸付プロトコルでは、成長よりもセーフティモジュール、bad debt吸収、ネイティブステーブルGHOの流動性が焦点になった。",
+        tech: "risk backstop、GHO facilitators、safety module redesign、cross-chain markets。",
+        status: "成熟期DeFiのリスク制度設計。",
+        sources: ["aave"], refs: [["Aave governance", "https://governance.aave.com/"]]
+      },
+      {
+        year: 2025, sortKey: "2025-04", date: "2025頃", name: "Ethena ecosystem: USDtb / iUSDe / Securitize links",
+        category: "Stablecoin", depth: "emerging", state: "active", chains: ["Ethereum", "RWA"], tags: ["Synthetic Dollar", "RWA", "Institutional"],
+        summary: "USDeだけでなく、RWA担保や機関向け利回り商品との接続が進み、合成ドルは単一トークンではなく流動性・担保・規制対応のエコシステムになった。",
+        tech: "basis yield、RWA collateral links、institutional wrappers、stablecoin liquidity。",
+        status: "合成ドル/RWAの融合領域。",
+        sources: ["ethena", "ondoDocs"]
+      },
+      {
+        year: 2025, sortKey: "2025-05", date: "2025頃", name: "Intent-centric DeFi stacks",
+        category: "Infrastructure", depth: "emerging", state: "active", chains: ["Ethereum", "Multichain"], tags: ["Intent", "Solver", "MEV"],
+        summary: "CoW、UniswapX、Across、Anoma系、solver networksにより、ユーザーはトランザクションではなく結果を指定する方向へ。MEVを奪われるものから、競争で価格改善に使うものへ変える。",
+        tech: "signed intents、solver competition、batch auction、cross-chain settlement、MEV redistribution。",
+        status: "2025-2026の実行レイヤーの大テーマ。",
+        sources: ["univ4"], refs: [["Across docs", "https://docs.across.to/"], ["Anoma docs", "https://docs.anoma.net/"]]
+      }
+    ];
+
+    const underworldEntries = [
+      {
+        year: 2020, sortKey: "2020-09-28", date: "2020-09-28", name: "Eminence Finance",
+        category: "Ponzi/Rug", depth: "degen", state: "incident", chains: ["Ethereum"], tags: ["未ローンチ", "Andre Cronje", "Degens", "Rug"],
+        summary: "Yearn創業者Andre Cronjeの未完成コントラクトに資金が流入し、攻撃で約1500万ドルが抜かれた事件。公式ローンチ前でも、名前と期待だけで資金が殺到するDeFiの危うさを示した。",
+        tech: "未監査/未公開UI、bonding curve的価格、未完成コントラクトへの直接入金。",
+        status: "未ローンチ実験へのape文化を象徴。『コードがあるから触る』文化の危険例。",
+        sources: ["rektLeaderboard"]
+      },
+      {
+        year: 2020, sortKey: "2020-11-22", date: "2020-11-22", name: "Pickle Finance pDAI incident",
+        category: "Ponzi/Rug", depth: "incident", state: "incident", chains: ["Ethereum"], tags: ["Food Farm", "Vault", "Rug"],
+        summary: "Pickleは単なる食べ物ファームではなく、ステーブルペッグ誘導とVault戦略を持っていたが、pDAI Jarの攻撃で約1970万ドルを失った。DeFi Summer後のVault複雑化リスクを示す。",
+        tech: "Jar/Vault、戦略コントラクト、偽Jar/交換ロジック悪用。",
+        status: "Yearn系との関係も含め、food farmが資産運用化した時代の重要事件。",
+        sources: ["rektLeaderboard", "yieldSok"]
+      },
+      {
+        year: 2020, sortKey: "2020-12-02", date: "2020-12-02", name: "Compounder Finance",
+        category: "Ponzi/Rug", depth: "incident", state: "failed", chains: ["Ethereum"], tags: ["Vault Rug", "Audit theater", "Timelock", "Rug"],
+        summary: "監査済みを掲げたVault系プロトコルだったが、監査後に悪意あるStrategyへ差し替えられ、約1200万ドルが抜かれた。監査・timelock・匿名チームが安全の十分条件ではないことを示した。",
+        tech: "Strategy差し替え、timelock監視不足、Controller権限、内部者rug。",
+        status: "Rektの代表的rugpull分析。『監査済みRug』の教材。",
+        sources: ["rektCompounder", "rektLeaderboard", "rugSok"]
+      },
+      {
+        year: 2021, sortKey: "2021-01-10", date: "2021-01頃", name: "Goose Finance / layered farms",
+        category: "Ponzi/Rug", depth: "degen", state: "legacy", chains: ["BNB"], tags: ["BSC", "MasterChef fork", "Layered Farming", "Rug"],
+        summary: "PancakeSwapの上にさらにFarmを重ねるBSC Rugの代表的な波。EGGや派生Farmが高APYを掲げ、LPを預けて新トークンを掘り、すぐ売るという短期ゲームが標準化した。",
+        tech: "MasterChef fork、deposit fee、referral、emission schedule、layered yield。",
+        status: "明確なrugというより、BSC food/animal farm量産のテンプレートとして重要。",
+        sources: ["tokenSpammers", "yieldSurvey"], refs: [["Goose Finance archive", "https://goosedefi.com/"]]
+      },
+      {
+        year: 2021, sortKey: "2021-02-01", date: "2021-02頃", name: "PantherSwap / animal farms wave",
+        category: "Ponzi/Rug", depth: "degen", state: "legacy", chains: ["BNB"], tags: ["BSC", "Animal Farm", "Rug", "Fork"],
+        summary: "Goose系の動物FarmがBSCで連鎖。Panther、Slime、Swamp、JetFuel、Autofarm系など、UIとMasterChefを少し変えたFarmが乱立し、APR、deposit fee、buyback/burnが売り文句になった。",
+        tech: "MasterChef、auto-compounder、deposit fee、反射的buyback、LP staking。",
+        status: "多くは縮小・消滅。Rugファーミング文化の大量生産フェーズ。",
+        sources: ["tokenSpammers", "rugSok"]
+      },
+      {
+        year: 2021, sortKey: "2021-03-04", date: "2021-03-04", name: "Meerkat Finance",
+        category: "Ponzi/Rug", depth: "incident", state: "failed", chains: ["BNB"], tags: ["BSC", "Vault Rug", "Proxy Upgrade", "Rug"],
+        summary: "BSC初期の大規模rug。稼働1日程度でBUSDとBNBを含む約3100万ドルが抜かれた。Rektは、デプロイヤーによるVault実装のupgradeと権限奪取が中心だったと分析している。",
+        tech: "Transparent Proxy upgrade、init owner backdoor、Vault drain、bridge停止騒動。",
+        status: "BSCがEthereum DeFi Summerを高速再演し、rugpull段階へ入った象徴。",
+        sources: ["rektMeerkat", "rektLeaderboard", "rugSok"]
+      },
+      {
+        year: 2021, sortKey: "2021-03-19", date: "2021-03頃", name: "TurtleDex",
+        category: "Ponzi/Rug", depth: "incident", state: "failed", chains: ["BNB"], tags: ["BSC", "Presale", "Liquidity drain", "Rug"],
+        summary: "BSC上のストレージ/DEX系を名乗ったプロジェクト。資金調達後、流動性が抜かれ、SNSやサイトが消える典型的なexit scamとして記憶される。",
+        tech: "Presale、LP drain、匿名運営、SNS削除。",
+        status: "BSC Rugの典型的ラグプル事例。詳細検証は当時のオンチェーン痕跡に依存。",
+        sources: ["rektLeaderboard", "rugSok"]
+      },
+      {
+        year: 2021, sortKey: "2021-04-12", date: "2021-04-12", name: "Elephant Money",
+        category: "Ponzi/Rug", depth: "incident", state: "incident", chains: ["BNB"], tags: ["BSC", "Bond/Reserve", "Price Manipulation", "Rug"],
+        summary: "BSCの高利回り・準備金系プロトコル。Rekt Leaderboardでは2021年4月の大規模被害として記録され、反射的トークノミクスと薄い流動性の危うさを示す。",
+        tech: "reserve tokenomics、AMM価格操作、反射的担保価値。",
+        status: "Rugに近いreserve/高利回りトークンのリスク例。",
+        sources: ["rektLeaderboard", "tokenSpammers"]
+      },
+      {
+        year: 2021, sortKey: "2021-04-28", date: "2021-04-28", name: "Uranium Finance",
+        category: "Ponzi/Rug", depth: "incident", state: "failed", chains: ["BNB"], tags: ["BSC", "Uniswap fork", "AMM bug", "Rug"],
+        summary: "BSCのAMM/DEX。定数積計算の変更ミスにより、約5700万ドル規模の被害としてRektに記録された。後年、米当局の起訴報道でも再注目された。",
+        tech: "Uniswap v2 fork、定数積チェックの桁/係数ミス、LP drain。",
+        status: "フォークコード改変がいかに危険かを示す代表例。",
+        sources: ["rektLeaderboard"], refs: [["Uranium prosecution coverage", "https://www.tomshardware.com/tech-industry/cryptocurrency/hacker-charged-for-stealing-usd53-million-in-crypto-faces-up-to-30-years-in-prison-uranium-finance-thief-spent-usd2-million-of-illicit-funds-on-magic-the-gathering-usd1-million-on-pokemon-cards"]]
+      },
+      {
+        year: 2021, sortKey: "2021-05-02", date: "2021-05-02", name: "Spartan Protocol",
+        category: "Ponzi/Rug", depth: "incident", state: "incident", chains: ["BNB"], tags: ["BSC", "Synthetic assets", "AMM exploit", "Rug"],
+        summary: "BSC上の合成資産/AMMプロトコル。流動性プールの価格計算を悪用され、約3050万ドル規模の被害として記録された。",
+        tech: "AMM価格操作、LP share計算、flash-loan型攻撃。",
+        status: "BSCで複雑なAMM/合成資産を早期に扱った危険例。",
+        sources: ["rektLeaderboard", "tokenSpammers"]
+      },
+      {
+        year: 2021, sortKey: "2021-05-07", date: "2021-05頃", name: "Value DeFi repeat incidents",
+        category: "Ponzi/Rug", depth: "incident", state: "incident", chains: ["BNB", "Ethereum"], tags: ["Vault", "Oracle", "Repeat exploit", "Rug"],
+        summary: "Value DeFiは複数回の攻撃でRektに掲載された。複雑なVault、ステーブルスワップ、オラクル参照、複数チェーン展開が重なると、同じチームでも連続して事故ることを示した。",
+        tech: "Vault strategy、AMM/oracle manipulation、multi-chain fork risk。",
+        status: "『一度やられたから次は安全』ではない、というRugの教訓。",
+        sources: ["rektLeaderboard", "yieldSok"]
+      },
+      {
+        year: 2021, sortKey: "2021-05-13", date: "2021-05頃", name: "Belt Finance / bEarn / AutoShark cluster",
+        category: "Ponzi/Rug", depth: "incident", state: "incident", chains: ["BNB"], tags: ["BSC", "Yield optimizer", "Stable vault", "Rug"],
+        summary: "BSCの自動複利・ステーブルVault群で、価格操作や戦略ロジックの弱さを突く事件が連鎖。高APRと低手数料チェーンが、攻撃者にも高速な実験場を与えた。",
+        tech: "auto-compound vault、stable swap、share price manipulation、flash loan。",
+        status: "BSC yield optimizerRugの中核的リスク群。",
+        sources: ["rektLeaderboard", "yieldSok", "tokenSpammers"]
+      },
+      {
+        year: 2021, sortKey: "2021-05-19", date: "2021-05-19", name: "PancakeBunny",
+        category: "Ponzi/Rug", depth: "incident", state: "incident", chains: ["BNB"], tags: ["BSC", "Yield optimizer", "Oracle manipulation", "Rug"],
+        summary: "PancakeSwap LPを自動複利するBSC最大級のVaultだったが、価格操作でBUNNYが大量発行され暴落。『大手Rug』でも価格参照とミント設計が弱いと壊れることを示した。",
+        tech: "flash loan、LP価格操作、報酬ミント、Vault share/price oracle。",
+        status: "BSC DeFi攻撃史の代表。既存年表項目をRugカテゴリで補強。",
+        sources: ["rektLeaderboard", "yieldSok"]
+      },
+      {
+        year: 2021, sortKey: "2021-05-29", date: "2021-05-29", name: "Iron Finance / TITAN",
+        category: "Ponzi/Rug", depth: "incident", state: "failed", chains: ["Polygon"], tags: ["Polygon", "Algorithmic Stable", "Bank Run", "Rug"],
+        summary: "FRAX風の部分担保ステーブルIRONとTITANがPolygonで急拡大後、取り付け騒ぎで崩壊。厳密には運営rugではなく設計上のデススパイラルだが、日本語圏のRugリスクでは重要な破綻例。",
+        tech: "USDC部分担保、TITAN吸収、動的担保率、償還スパイラル。",
+        status: "Mark Cubanも巻き込んだDeFi bank runの代表例。",
+        sources: ["fraxV1"], refs: [["Iron Finance background", "https://en.wikipedia.org/wiki/Iron_Finance"]]
+      },
+      {
+        year: 2021, sortKey: "2021-06-10", date: "2021-06頃", name: "Polywhale / PolyYeld / SafeDollar",
+        category: "Ponzi/Rug", depth: "degen", state: "failed", chains: ["Polygon"], tags: ["Polygon", "Farm", "Algorithmic stable", "Rug"],
+        summary: "Polygon低手数料化で、BSC的なFarmと高APRステーブル実験が移植された。PolywhaleやPolyYeldのようなFarm、SafeDollarのようなアルゴリズムステーブルが短期間で熱狂と崩壊を繰り返した。",
+        tech: "MasterChef fork、auto-compound、partial/algorithmic stable、thin liquidity。",
+        status: "PolygonRugの初期波。個別の正確な資金移動はオンチェーン/当時記事で追加検証したい。",
+        sources: ["rugSok", "tokenSpammers"]
+      },
+      {
+        year: 2021, sortKey: "2021-08-03", date: "2021-08-03", name: "Popsicle Finance",
+        category: "Ponzi/Rug", depth: "incident", state: "incident", chains: ["Ethereum", "Multichain"], tags: ["CL management", "Vault", "Rug"],
+        summary: "集中流動性管理Vaultとして注目されたが、約2000万ドル規模の攻撃を経験。『Uniswap v3の上に戦略Vaultを載せる』設計は強力だが、実装リスクも大きい。",
+        tech: "liquidity management vault、strategy accounting、multi-pool exposure。",
+        status: "集中流動性VaultRugの教材。",
+        sources: ["rektLeaderboard"]
+      },
+      {
+        year: 2021, sortKey: "2021-09-01", date: "2021後半", name: "Tomb Finance and Tomb forks",
+        category: "Ponzi/Rug", depth: "degen", state: "legacy", chains: ["Fantom", "Multichain"], tags: ["Fantom", "Seigniorage", "TOMB fork", "Rug"],
+        summary: "FTMにペッグするTOMBを中心に、seigniorage shares型のステーブル/リベース系がFantomで流行。Tomb fork、2omb/3omb、Masonry系の高APRは、OHM forkと並ぶRugの定番になった。",
+        tech: "seigniorage shares、boardroom/Masonry、bond/share/token三層、ペッグ維持インセンティブ。",
+        status: "一部は継続、一部は崩壊。Fantom Rug事例の中核。",
+        sources: ["rugSok", "yieldSurvey"], refs: [["Tomb docs", "https://docs.tomb.com/"]]
+      },
+      {
+        year: 2021, sortKey: "2021-10-14", date: "2021-10-14", name: "Indexed Finance",
+        category: "Ponzi/Rug", depth: "incident", state: "incident", chains: ["Ethereum"], tags: ["Index", "Balancer-style pool", "Rug"],
+        summary: "DeFi指数プロトコル。攻撃で約1600万ドル規模の被害としてRektに記録され、インデックス/プール再重み付けロジックの危険を示した。",
+        tech: "index pool、rebalancing、AMM invariant/weight manipulation。",
+        status: "指数DeFiでもRugに近い攻撃面があることを示した。",
+        sources: ["rektLeaderboard"]
+      },
+      {
+        year: 2021, sortKey: "2021-11-25", date: "2021-11-25", name: "Snowdog",
+        category: "Ponzi/Rug", depth: "incident", state: "failed", chains: ["Avalanche"], tags: ["OHM fork", "Buyback", "Avalanche", "Rug"],
+        summary: "OHM fork/ミーム通貨/買い戻しイベントを組み合わせたAvalancheの事件。Rektによると、新AMMとパスワード付きフロントエンド、最初の数取引の異常な利益が疑惑を呼んだ。",
+        tech: "custom AMM、treasury buyback、front-end gating、insider information疑惑。",
+        status: "OHM forkRugの中でも洗練された『ゲーム化されたrug』の例。",
+        sources: ["rektSnowdog", "rektLeaderboard", "olympusPol"]
+      },
+      {
+        year: 2021, sortKey: "2021-12-18", date: "2021-12-18", name: "Grim Finance",
+        category: "Ponzi/Rug", depth: "incident", state: "incident", chains: ["Fantom"], tags: ["Fantom", "Vault", "Reentrancy", "Rug"],
+        summary: "FantomのVault/auto-compounder。約3000万ドル規模の被害としてRektに記録され、低手数料チェーンのVaultRugにもEthereum同様の実装リスクがあると示した。",
+        tech: "Vault share accounting、reentrancy、strategy funds drain。",
+        status: "Fantom Rugの代表的攻撃事件。",
+        sources: ["rektLeaderboard", "yieldSok"]
+      },
+      {
+        year: 2022, sortKey: "2022-01-04", date: "2022-01-04", name: "Arbix Finance",
+        category: "Ponzi/Rug", depth: "incident", state: "failed", chains: ["BNB"], tags: ["BSC", "CertiK alert", "Yield farm", "Rug"],
+        summary: "BSCのyield farmを名乗ったプロジェクト。Rekt Leaderboardでは約1000万ドル規模で記録され、監査/スキャナ/アラート文化がRug調査に必要になった時期を示す。",
+        tech: "yield farm、privileged mint/withdraw risk、匿名チーム。",
+        status: "BSC後期Rugのrugpull事例。",
+        sources: ["rektLeaderboard", "rugSok"]
+      },
+      {
+        year: 2022, sortKey: "2022-05-13", date: "2022-05-13", name: "Blizz Finance / Venus LUNA oracle event",
+        category: "Ponzi/Rug", depth: "incident", state: "incident", chains: ["Avalanche", "BNB"], tags: ["LUNA", "Oracle", "Lending", "Rug"],
+        summary: "LUNA崩壊時、価格オラクル/市場停止の扱いが遅れた貸付市場で不良債権が発生。Rugではない大手寄りプロトコルでも、外部資産の崩壊が連鎖することを示した。",
+        tech: "stale oracle、collateral collapse、bad debt、cross-protocol contagion。",
+        status: "Terra崩壊の二次被害例。",
+        sources: ["rektLeaderboard"]
+      },
+      {
+        year: 2023, sortKey: "2023-07-31", date: "2023-07-31", name: "BALD on Base",
+        category: "Ponzi/Rug", depth: "degen", state: "failed", chains: ["Base"], tags: ["Base", "Meme coin", "LP pull", "Rug"],
+        summary: "Base初期、公式ブリッジや主要DEXが整う前から資金が殺到したミームコイン。Rektは約2300万ドルの流動性pullとして記録し、L2初期の未整備環境がrug pullが起きやすい環境を示した。",
+        tech: "LP追加/削除、meme coin、未成熟L2、直接ブリッジ入金、流動性pull。",
+        status: "Base Rugの初期象徴。『新チェーン初日』は常にrug pullが起きやすい。",
+        sources: ["rektBald", "rektLeaderboard"]
+      },
+      {
+        year: 2024, sortKey: "2024-03-28", date: "2024-03-28", name: "PrismaFi exploit",
+        category: "Ponzi/Rug", depth: "incident", state: "incident", chains: ["Ethereum"], tags: ["LSTfi", "Stablecoin", "Vault", "Rug"],
+        summary: "LST担保ステーブル/LSDfi領域の代表的事件。LSTfiは『硬い担保』に見えるが、Vault・清算・権限・インセンティブが複雑化し、攻撃面も広がる。",
+        tech: "LST collateral、stablecoin minting、vault accounting、privileged flows。",
+        status: "LSDfiRugのリスク例として追加調査対象。",
+        sources: ["rektLeaderboard", "curve", "convex"]
+      },
+      {
+        year: 2024, sortKey: "2024-04-20", date: "2024-04-20", name: "ZKasino",
+        category: "Ponzi/Rug", depth: "incident", state: "failed", chains: ["Ethereum", "L2"], tags: ["Bridge", "Presale", "Exit scam疑惑", "Rug"],
+        summary: "ユーザー資金の返還条件が変更され、exit scam疑惑として大きく炎上。DeFiというより資金調達/ブリッジ型だが、ポイント・エアドロップ・L2期待を利用した現代的rugとして重要。",
+        tech: "bridge deposit、terms change、staking conversion、opaque treasury control。",
+        status: "2024年型の『ポイント/プレセールRug』の代表例。",
+        sources: ["rektLeaderboard", "rugSok"]
+      },
+      {
+        year: 2024, sortKey: "2024-06-10", date: "2024-06-10", name: "UwU Lend",
+        category: "Ponzi/Rug", depth: "incident", state: "incident", chains: ["Ethereum"], tags: ["Lending", "Oracle manipulation", "Curve assets", "Rug"],
+        summary: "貸付市場で価格操作と担保評価が絡んだ事件。Curve系資産、ステーブル、貸付が重なると、古典的なoracle/流動性問題が何度も再発する。",
+        tech: "oracle manipulation、lending collateral、stable pool liquidity、bad debt。",
+        status: "貸付Rugの継続的リスク例。",
+        sources: ["rektLeaderboard"]
+      },
+      {
+        year: 2025, sortKey: "2025-04-06", date: "2025-04頃", name: "Solana rug-pull datasets",
+        category: "Ponzi/Rug", depth: "emerging", state: "active", chains: ["Solana"], tags: ["Solana", "Dataset", "Memecoin", "Rug調査"],
+        summary: "Solanaでは低手数料・高速発行・memecoin文化により、短命LPとrugpull検出が研究対象になった。SolRPDSは2021-2024年の疑わしい流動性プールを大規模に分析する。",
+        tech: "LP inactivity、liquidity add/remove、suspicious pools、serial deployers。",
+        status: "個別プロトコルではなく、Rugをデータセットとして研究する段階。",
+        sources: ["solRpds", "serialScammers"]
+      }
+    ];
+
+    const categoryLabels = {
+      all: "すべて",
+      "DEX/AMM": "DEX/AMM",
+      Aggregator: "アグリゲータ",
+      Lending: "貸付",
+      Stablecoin: "ステーブル",
+      Derivatives: "デリバティブ",
+      Yield: "イールド",
+      Governance: "ガバナンス",
+      Risk: "リスク",
+      "Ponzi/Rug": "Rug",
+      Infrastructure: "インフラ",
+      Insurance: "保険",
+      Prediction: "予測市場",
+      "LST/Restaking": "LST/LRT",
+      RWA: "RWA",
+      NFTfi: "NFTfi",
+      Other: "その他",
+      "Asset Management": "資産運用"
+    };
+
+    const depthLabels = {
+      all: "全部",
+      curated: "精選",
+      core: "Core: 基礎",
+      major: "Major: 重要",
+      niche: "Niche: マニアック",
+      degen: "Degen: 狂騒/短命",
+      incident: "Incident: 事件/破綻",
+      emerging: "Emerging: 新興"
+    };
+
+    const statusLabels = {
+      all: "全部",
+      active: "稼働中/継続",
+      legacy: "歴史的/縮小",
+      failed: "消滅/破綻",
+      incident: "攻撃/問題あり",
+      emerging: "新興/発展中"
+    };
+
+    const chainLabels = {
+      all: "全部",
+      Ethereum: "Ethereum",
+      Multichain: "Multichain",
+      L2: "L2",
+      BNB: "BNB Chain",
+      Polygon: "Polygon",
+      Avalanche: "Avalanche",
+      Fantom: "Fantom",
+      Base: "Base",
+      Solana: "Solana",
+      Cosmos: "Cosmos",
+      Terra: "Terra",
+      HECO: "HECO",
+      Moonriver: "Moonriver",
+      Bitcoin: "Bitcoin/BTCfi",
+      RWA: "RWA市場",
+      Appchain: "Appchain"
+    };
+
+    const depthGroups = {
+      curated: ["core", "major", "incident", "emerging"]
+    };
+
+    function inferDepth(entry) {
+      if (entry.depth) return entry.depth;
+      if (entry.category === "Risk") return "incident";
+      return entry.importance === "major" ? "major" : "niche";
+    }
+
+    function inferState(entry) {
+      if (entry.state) return entry.state;
+      if (entry.category === "Risk") return "incident";
+      if ((entry.status || "").includes("短命") || (entry.status || "").includes("崩壊")) return "failed";
+      return "active";
+    }
+
+    function inferChains(entry) {
+      if (entry.chains) return entry.chains;
+      const text = [entry.name, entry.summary, entry.status, ...(entry.tags || [])].join(" ");
+      if (text.includes("Solana")) return ["Solana"];
+      if (text.includes("Cosmos")) return ["Cosmos"];
+      if (text.includes("Base")) return ["Base"];
+      if (text.includes("Fantom")) return ["Fantom"];
+      if (text.includes("Polygon")) return ["Polygon"];
+      if (text.includes("HECO")) return ["HECO"];
+      if (text.includes("Moonriver")) return ["Moonriver"];
+      if (text.includes("BNB") || text.includes("BSC")) return ["BNB"];
+      if (text.includes("Arbitrum") || text.includes("Optimism") || text.includes("Base") || text.includes("L2")) return ["L2"];
+      if (text.includes("Avalanche")) return ["Avalanche"];
+      if (text.includes("Terra")) return ["Terra"];
+      if (text.includes("RWA")) return ["RWA"];
+      return ["Ethereum"];
+    }
+
+    const timelineEntries = [...entries, ...supplementalEntries, ...underworldEntries]
+      .map((entry, index) => ({
+        ...entry,
+        _index: index,
+        depth: inferDepth(entry),
+        state: inferState(entry),
+        chains: inferChains(entry),
+        tags: entry.tags || [],
+        sources: entry.sources || []
+      }))
+      .sort((a, b) => {
+        const aKey = a.sortKey || `${a.year}-99-${String(a._index).padStart(3, "0")}`;
+        const bKey = b.sortKey || `${b.year}-99-${String(b._index).padStart(3, "0")}`;
+        return aKey.localeCompare(bKey) || a._index - b._index;
+      });
+
+  window.DEFI_HISTORY = {
+    sources,
+    entries,
+    supplementalEntries,
+    underworldEntries,
+    timelineEntries,
+    categoryLabels,
+    depthLabels,
+    statusLabels,
+    chainLabels,
+    depthGroups
+  };
+})();

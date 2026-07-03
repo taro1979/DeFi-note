@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>プロトコル詳細 - DeFi History Atlas</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap topbar">
+      <a class="brand" href="index.html">DeFi History Atlas</a>
+      <nav class="nav"><a href="index.html">概要</a><a href="timeline.html">年表</a><a href="categories.html">カテゴリ</a><a class="active" href="protocols.html">プロトコル</a><a href="underworld.html">Rug事例</a><a href="deep-research.html">深掘り</a><a href="research-method.html">調査方法</a><a href="sources.html">出典</a></nav>
+    </div>
+  </header>
+  <main class="wrap">
+      <div class="section-title"><h2>プロトコル詳細</h2><p>年表の全項目を詳細カード化。検索と複数選択フィルターで、技術・事件・Rug・RWA・LST/LRTなどを横断して読む。</p></div>
+      <div class="research-link-grid" id="researchLinkGrid"></div>
+      <div class="protocol-toolbar">
+        <div class="filter-group"><span class="filter-title">検索</span><input id="protocolSearch" type="search" placeholder="例: MasterChef, Curve, RWA, restaking, BSC, rug"></div>
+        <div class="filter-group"><span class="filter-title">カテゴリ</span><div class="filters" id="protocolCategoryFilters"></div></div>
+        <div class="filter-group"><span class="filter-title">深さ / 重要度</span><div class="filters" id="protocolDepthFilters"></div></div>
+        <div class="filter-group"><span class="filter-title">状態</span><div class="filters" id="protocolStatusFilters"></div></div>
+        <p class="note">同じグループ内はOR、カテゴリ・深さ・状態の間はAND。表示中: <b id="protocolResultCount">0</b> / <span data-total-count>0</span>件。</p>
+      </div>
+      <div class="protocol-grid" id="protocolGrid"></div>
+    </main>
+  <footer><div class="wrap">作成目的: DeFiプロトコル進化の調査・参照用。日付とステータスは市場やドキュメント更新で変わる可能性がある。</div></footer>
+  <script src="assets/defi-data.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>

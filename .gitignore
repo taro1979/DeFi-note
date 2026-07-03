@@ -1,0 +1,19 @@
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# Dependencies and build output
+node_modules/
+dist/
+.next/
+out/
+
+# Logs and OS files
+*.log
+.DS_Store
+*.pyc
+__pycache__/
+
+# Temporary template checkout used during setup
+.template-claude-project-template/

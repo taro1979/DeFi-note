@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>カテゴリ - DeFi History Atlas</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap topbar">
+      <a class="brand" href="index.html">DeFi History Atlas</a>
+      <nav class="nav"><a href="index.html">概要</a><a href="timeline.html">年表</a><a class="active" href="categories.html">カテゴリ</a><a href="protocols.html">プロトコル</a><a href="underworld.html">Rug事例</a><a href="deep-research.html">深掘り</a><a href="research-method.html">調査方法</a><a href="sources.html">出典</a></nav>
+    </div>
+  </header>
+  <main class="wrap">
+      <div class="section-title"><h2>カテゴリ研究ノート</h2><p>DeFiを単なるジャンル名ではなく、設計メカニズム、オンチェーン指標、代表プロトコル、学術研究の対応関係で読む。</p></div>
+      <div class="category-dashboard" id="categoryDashboard"></div>
+      <section class="deep-section" aria-labelledby="academicFindingsTitle">
+        <div class="section-title"><h2 id="academicFindingsTitle">学術データ・ハイライト</h2><p>論文・測定研究から、カテゴリ理解に使える定量的な観測値を抜き出す。</p></div>
+        <div class="finding-grid" id="categoryFindings"></div>
+      </section>
+      <section class="academic-library deep-section" aria-labelledby="academicSources">
+        <div class="section-title"><h2 id="academicSources">学術・研究ソース</h2><p>各カテゴリカードに紐づける主要論文。AMM、清算、MEV、利回り、Rug、ブリッジ、RWAまで横断する。</p></div>
+        <div class="card"><ul class="source-list" id="categoryAcademicLibrary"></ul></div>
+      </section>
+      <div class="category-research-list" id="categoryGrid"></div>
+    </main>
+  <footer><div class="wrap">作成目的: DeFiプロトコル進化の調査・参照用。日付とステータスは市場やドキュメント更新で変わる可能性がある。</div></footer>
+  <script src="assets/defi-data.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>

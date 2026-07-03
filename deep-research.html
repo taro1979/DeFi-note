@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>深掘り事例 - DeFi History Atlas</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap topbar">
+      <a class="brand" href="index.html">DeFi History Atlas</a>
+      <nav class="nav"><a href="index.html">概要</a><a href="timeline.html">年表</a><a href="categories.html">カテゴリ</a><a href="protocols.html">プロトコル</a><a href="underworld.html">Rug事例</a><a class="active" href="deep-research.html">深掘り</a><a href="research-method.html">調査方法</a><a href="sources.html">出典</a></nav>
+    </div>
+  </header>
+  <main class="wrap">
+      <section class="deep-section" aria-labelledby="deepCases">
+      <div class="section-title">
+        <h2 id="deepCases">深掘り事例</h2>
+        <p>年表だけでは見えにくい「何が新しかったのか」「なぜ熱狂したのか」「どこで壊れたのか」を、主要な設計パターンごとに整理する。</p>
+      </div>
+      <div class="deep-grid">
+        <article class="deep-card">
+          <h3>1. AMMは「板のない取引所」から「流動性OS」へ</h3>
+          <p>Uniswap v1はx*y=kの素朴なAMMだったが、v2でERC20/ERC20、TWAP、Flash Swapへ広がり、v3でLPポジションがNFT化された。LPは単なる預金者ではなく、価格レンジ、手数料Tier、在庫リスク、再配置コストを判断するマーケットメーカーになった。Curveは似た価格の資産に特化し、Balancerは重み付き多資産ポートフォリオ、DODOはPMMで外部価格を参照、Maverickは価格移動に合わせて流動性分布を動かす。Uniswap v4のHooksは、AMMを「固定仕様のDEX」ではなく、プール単位で機能を差し込む実行環境に変えた。</p>
+          <ul>
+            <li><b>代表:</b> Uniswap, Curve, Balancer, Bancor, DODO, KyberSwap, Trader Joe Liquidity Book, Maverick, Ambient/CrocSwap, Aerodrome, PancakeSwap Infinity。</li>
+            <li><b>核心:</b> 流動性を数式で価格付けするだけでなく、誰がどこに資本を置き、どのMEVを誰が取るかが主戦場になった。</li>
+            <li><b>参考:</b> <a href="https://blog.uniswap.org/uniswap-v2" target="_blank" rel="noreferrer">Uniswap v2</a> / <a href="https://blog.uniswap.org/uniswap-v3" target="_blank" rel="noreferrer">Uniswap v3</a> / <a href="https://developers.uniswap.org/docs/protocols/v4/overview" target="_blank" rel="noreferrer">Uniswap v4</a> / <a href="https://docs.dodoex.io/zh/product/pmm-algorithm" target="_blank" rel="noreferrer">DODO PMM 中国語公式</a> / <a href="https://docs.mav.xyz/" target="_blank" rel="noreferrer">Maverick</a></li>
+          </ul>
+        </article>
+
+        <article class="deep-card">
+          <h3>2. 貸付は「共有プール」から「リスク分離とキュレーション」へ</h3>
+          <p>Compound/Aaveは資産ごとに供給・借入プールを作り、利用率で金利を動かすモデルを完成させた。DeFi Summer後はCreamやRari Fuseがロングテール担保を積極上場し、攻撃も受けた。2022年以後はAave v3のIsolation Mode、Euler/Siloの分離市場、Morpho Blueの市場単位設計、Gearboxの信用口座、Notionalの固定金利など、リスクを一枚岩にしない方向へ進んだ。</p>
+          <ul>
+            <li><b>代表:</b> Maker, Compound, Aave, dYdX lending, bZx, Cream, Rari Fuse, Liquity, Alchemix, Euler, Silo, Gearbox, Morpho, Notional, Maple, Goldfinch。</li>
+            <li><b>核心:</b> 初期は「何でも担保にできる」ことが魅力だったが、現在は「どの担保リスクを誰が引き受けるか」を分離する設計が強い。</li>
+            <li><b>参考:</b> <a href="https://docs.compound.finance/v2/" target="_blank" rel="noreferrer">Compound</a> / <a href="https://aave.com/docs/resources/legacy-versions/v1" target="_blank" rel="noreferrer">Aave</a> / <a href="https://docs.euler.finance/" target="_blank" rel="noreferrer">Euler</a> / <a href="https://docs.silo.finance/" target="_blank" rel="noreferrer">Silo</a> / <a href="https://docs.notional.finance/notional-v3/" target="_blank" rel="noreferrer">Notional</a></li>
+          </ul>
+        </article>
+
+        <article class="deep-card">
+          <h3>3. ステーブルコインは「ドルコピー」ではなく金融政策の実験場</h3>
+          <p>MakerのDAIはCDP/Vault型の担保ステーブルの原型だった。Fraxは部分担保アルゴリズムからAMOと100%担保方針へ、Liquityはガバナンス最小・無利子LUSDへ、FeiはPCVへ、Alchemixは将来利回りを前借りするalUSDへ、CurveはLLAMMAでソフト清算するcrvUSDへ進化した。2024年以降はEthena USDeのようなデルタヘッジ型合成ドル、Ondo USDY/OUSGやsDAIのようなRWA利回り接続も強い。</p>
+          <ul>
+            <li><b>代表:</b> DAI/Sai, sUSD, mUSD, FRAX, FEI, LUSD, alUSD, MIM, RAI, crvUSD, GHO, USDe, USDY, sFRAX, BOLD。</li>
+            <li><b>核心:</b> ステーブルの問題は価格を1ドルに保つことだけではなく、担保、償還、収益、ガバナンス、規制、流動性の設計である。</li>
+            <li><b>参考:</b> <a href="https://docs.makerdao.com/" target="_blank" rel="noreferrer">MakerDAO</a> / <a href="https://docs.frax.finance/frax-v1-original/original-design" target="_blank" rel="noreferrer">Frax v1</a> / <a href="https://docs.frax.finance/amo/overview" target="_blank" rel="noreferrer">Frax AMO</a> / <a href="https://docs.curve.finance/references/whitepaper/" target="_blank" rel="noreferrer">Curve LLAMMA</a> / <a href="https://docs.ethena.fi/" target="_blank" rel="noreferrer">Ethena</a></li>
+          </ul>
+        </article>
+
+        <article class="deep-card">
+          <h3>4. DeFi Summerは「金融」より「ゲーム」だった</h3>
+          <p>COMP配布で流動性マイニングが標準化され、Yearnは利回り探索を自動化し、YAM、Sushi、Pickle、Harvest、Kimchi、Spaghetti、Hotdogなどの実験が連鎖した。多くは短命で、コードは粗く、APYは持続不能だった。しかしこの時期に「トークンで流動性を買う」「フォークしてコミュニティを奪う」「Vaultで戦略を商品化する」というDeFiの行動様式が固まった。</p>
+          <ul>
+            <li><b>代表:</b> Compound COMP, Yearn, SushiSwap, YAM, Pickle, Harvest, Cream, Alpha Homora, Badger, Beefy, Autofarm, PancakeBunny。</li>
+            <li><b>核心:</b> インセンティブはTVLを呼べるが、同時に傭兵資本、攻撃者、希薄化、ガバナンス買収も呼ぶ。</li>
+            <li><b>参考:</b> <a href="https://docs.yearn.fi/getting-started/products/yvaults/overview" target="_blank" rel="noreferrer">Yearn</a> / <a href="https://arxiv.org/abs/2105.13891" target="_blank" rel="noreferrer">Yield Aggregators SoK</a> / <a href="https://arxiv.org/abs/2210.04194" target="_blank" rel="noreferrer">Yield Farming Survey</a></li>
+          </ul>
+        </article>
+
+        <article class="deep-card">
+          <h3>5. veToken、Curve Wars、メタガバナンス</h3>
+          <p>CurveのveCRVは、トークンをロックした期間に応じて投票力とboostを与える。Convexはその投票力を集約し、LPはCRVをロックせずboostを得られ、CVXロッカーはGauge配分に影響できる。ここからBribe、Gauge War、ve(3,3)、Solidly、Velodrome、Aerodrome、Frax veFXSなどのメタガバナンス市場が生まれた。</p>
+          <ul>
+            <li><b>代表:</b> Curve, Convex, Frax, Redacted Cartel, Votium, Hidden Hand, Solidly, Velodrome, Aerodrome, Balancer veBAL。</li>
+            <li><b>核心:</b> トークンの価値は「手数料」だけでなく、将来の流動性排出を指揮する権利にも宿る。</li>
+            <li><b>参考:</b> <a href="https://docs.convexfinance.com/convexfinance/general-information/why-convex" target="_blank" rel="noreferrer">Convex</a> / <a href="https://docs.convexfinance.com/convexfinance/general-information/why-convex/voting-and-gauge-weights" target="_blank" rel="noreferrer">Gauge voting</a> / <a href="https://docs.frax.finance/" target="_blank" rel="noreferrer">Frax veFXS</a></li>
+          </ul>
+        </article>
+
+        <article class="deep-card">
+          <h3>6. LST/LRTと金利市場の誕生</h3>
+          <p>LidoやRocket Poolは、ステーキングされたETHをstETH/rETHとして流動化した。Merge後、LSTはDeFi最大級の担保になり、Curve stETH/ETH、Aave、Maker/Sky、Pendleへ流れ込んだ。さらにEigenLayerでRestakingが始まり、Ether.fi、Renzo、KelpなどのLRTが登場し、ポイント、将来エアドロップ、スラッシングリスクまで利回り市場に組み込まれた。</p>
+          <ul>
+            <li><b>代表:</b> Lido, Rocket Pool, StakeWise, Frax Ether, Swell, EigenLayer, Ether.fi, Renzo, Kelp, Puffer, Pendle, Gearbox, Cian。</li>
+            <li><b>核心:</b> ETHそのものではなく「将来の検証報酬」「ポイント」「スラッシングリスク」を取引する段階に入った。</li>
+            <li><b>参考:</b> <a href="https://docs.lido.fi/" target="_blank" rel="noreferrer">Lido</a> / <a href="https://docs.rocketpool.net/ja/" target="_blank" rel="noreferrer">Rocket Pool 日本語公式</a> / <a href="https://docs.rocketpool.net/ko/" target="_blank" rel="noreferrer">Rocket Pool 韓国語公式</a> / <a href="https://docs.pendle.finance/llms.txt" target="_blank" rel="noreferrer">Pendle</a> / <a href="https://docs.eigencloud.xyz/" target="_blank" rel="noreferrer">EigenCloud/EigenLayer</a></li>
+          </ul>
+        </article>
+
+        <article class="deep-card">
+          <h3>7. デリバティブはAMMからL2/CLOB/Appchainへ</h3>
+          <p>初期のPerpetual ProtocolはvAMMでperpsを実現したが、大口・高頻度取引には板、低遅延、清算エンジンが必要だった。dYdXはStarkExを経てCosmos appchainへ、GMXはGLP型プールで「LPが取引相手」になるモデルへ、Aevo/Deriveはオフチェーンマッチングとオンチェーン決済へ進んだ。Gainsは暗号資産以外のFX/株価指数/商品をオンチェーン合成取引に拡張した。</p>
+          <ul>
+            <li><b>代表:</b> dYdX, Perpetual Protocol, GMX, Gains, Kwenta, Synthetix Perps, Lyra/Derive, Aevo, Hyperliquid, Drift, Vertex, RabbitX。</li>
+            <li><b>核心:</b> 完全オンチェーンAMMだけではなく、CLOB、Oracle、L2、Appchain、Intentが混ざるハイブリッド市場になった。</li>
+            <li><b>参考:</b> <a href="https://www.axios.com/2022/06/22/dydx-defi-blue-chip-ethereum-build-next-version-cosmos" target="_blank" rel="noreferrer">dYdX/Cosmos</a> / <a href="https://docs.gmx.io/docs/providing-liquidity/v1/" target="_blank" rel="noreferrer">GMX</a> / <a href="https://docs.aevo.xyz/" target="_blank" rel="noreferrer">Aevo</a> / <a href="https://docs.gains.trade/" target="_blank" rel="noreferrer">Gains</a></li>
+          </ul>
+        </article>
+
+        <article class="deep-card">
+          <h3>8. RWAは「現実資産をDeFi利回りにする」流れ</h3>
+          <p>2020-2021のDeFiはほぼ暗号資産内の循環だったが、Maker/SkyのRWA担保、Centrifugeのトークン化資産、Maple/Goldfinchのオンチェーン信用、Ondoの米国債系トークンで、利回り源泉が外部へ広がった。ここでは非カストディ性より、法的請求権、KYC、償還、透明性、ファンド構造が重要になる。</p>
+          <ul>
+            <li><b>代表:</b> Centrifuge, Maker/Sky RWA, Ondo OUSG/USDY, Maple, Goldfinch, Backed, OpenEden, Superstate, Mountain USDM, Matrixdock。</li>
+            <li><b>核心:</b> RWAはDeFiの純粋性を弱める一方、利回りと担保の源泉を暗号資産価格から切り離す。</li>
+            <li><b>参考:</b> <a href="https://docs.centrifuge.io/" target="_blank" rel="noreferrer">Centrifuge</a> / <a href="https://docs.ondo.finance/" target="_blank" rel="noreferrer">Ondo</a> / <a href="https://docs.maple.finance/" target="_blank" rel="noreferrer">Maple</a> / <a href="https://docs.goldfinch.finance/goldfinch/" target="_blank" rel="noreferrer">Goldfinch</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+      <section class="deep-section" aria-labelledby="taxonomy">
+      <div class="section-title">
+        <h2 id="taxonomy">技術系譜マップ</h2>
+        <p>プロトコル名を単発で覚えるより、どの設計系譜に属するかで見ると理解しやすい。</p>
+      </div>
+      <div class="matrix">
+        <div class="matrix-card"><b>基礎AMM・定数積DEX</b><span>Uniswap v1/v2, SushiSwap, PancakeSwap, QuickSwap。単純で強いが、似た価格資産や資本効率に弱い。</span></div>
+        <div class="matrix-card"><b>相関資産AMM</b><span>Curve StableSwap, Balancer Stable Pool, Saddle, Ellipsis, Platypus。ステーブル、LST、wrapped BTCなど相関資産に強い。</span></div>
+        <div class="matrix-card"><b>能動LP・集中流動性</b><span>Uniswap v3, Kyber Elastic, Trader Joe Liquidity Book, Maverick, Ambient。LPが価格帯と分布を管理する。</span></div>
+        <div class="matrix-card"><b>執行最適化・Intent</b><span>1inch, Matcha, ParaSwap, CoW Protocol, UniswapX, KyberSwap Aggregator。流動性より執行品質、MEV処理、ソルバー競争が焦点。</span></div>
+        <div class="matrix-card"><b>共有プール貸付</b><span>Compound, Aave, Cream, Venus, Radiant。利用率ベース金利、担保率、清算人が基礎。</span></div>
+        <div class="matrix-card"><b>分離型・キュレーション貸付</b><span>Rari Fuse, Euler, Silo, Morpho Blue, Fraxlend。市場ごとに担保・オラクル・リスクを分ける。</span></div>
+        <div class="matrix-card"><b>担保発行型ステーブル</b><span>Maker DAI, Liquity LUSD/BOLD, Abracadabra MIM, Curve crvUSD, Aave GHO。担保をロックしステーブルを発行。</span></div>
+        <div class="matrix-card"><b>合成ドル・ヘッジ型ステーブル</b><span>Synthetix sUSD, Frax, Ethena USDe, UXD。担保・ヘッジ・デットプールで価格安定を作る。</span></div>
+        <div class="matrix-card"><b>Vault型利回り運用</b><span>Yearn, Pickle, Harvest, Beefy, Badger, Autofarm, Cian。戦略をVaultに抽象化し、複数プロトコルへ資本を回す。</span></div>
+        <div class="matrix-card"><b>金利・利回り分解市場</b><span>Notional, Element, Pendle, Sense, Swivel。将来利回りを固定/変動、元本/利回りに分ける。</span></div>
+        <div class="matrix-card"><b>オンチェーンデリバティブ</b><span>dYdX, GMX, Perp, Synthetix Perps, Lyra/Derive, Aevo, Gains。AMM、CLOB、Oracle、Appchainが混在。</span></div>
+        <div class="matrix-card"><b>流動性ガバナンス</b><span>Curve, Convex, Olympus, Tokemak, Frax, Velodrome, Aerodrome。流動性と排出をガバナンスで制御する。</span></div>
+      </div>
+    </section>
+      <section class="deep-section" aria-labelledby="failureCases">
+      <div class="section-title">
+        <h2 id="failureCases">失敗・攻撃・設計の教訓</h2>
+        <p>DeFiの進化は成功例だけでなく、攻撃と破綻からの学習でも進んだ。被害額は資料により差があるため、ここでは方向性と原因を重視する。</p>
+      </div>
+      <div class="deep-grid">
+        <article class="deep-card">
+          <h3>Flash Loanとオラクル操作</h3>
+          <p>bZx、Harvest、PancakeBunny、Mangoなどで、薄い流動性や単一価格参照をFlash Loan/大口取引で動かし、担保価値やVault価格を歪める攻撃が繰り返された。これによりTWAP、Chainlink、複数市場参照、価格境界、清算遅延などの設計が強化された。</p>
+        </article>
+        <article class="deep-card">
+          <h3>フォーク文化と雑なコード</h3>
+          <p>Uranium、Meerkat、Snowdog、Hotdog、YAM、Pickleなど、DeFi Summer以後の高速フォークは監査・テスト不足のままTVLを集めた。ユーザーは「TVLがあるから安全」と誤認しやすく、実際にはTVLが攻撃者への報酬になった。</p>
+        </article>
+        <article class="deep-card">
+          <h3>ガバナンス攻撃と投票市場</h3>
+          <p>Beanstalkのようなガバナンス攻撃は、投票権が即時借入・即時行使できる場合の危険を示した。Curve/Convex以後のBribe市場は合法的な票買いに近く、インセンティブと攻撃の境界を曖昧にした。</p>
+        </article>
+        <article class="deep-card">
+          <h3>アルゴリズムステーブルの反射性</h3>
+          <p>Terra/USTは、成長時には担保に見える自己参照的需要が、逆回転時に担保ではなく売り圧になることを示した。Fraxが後に100%担保・AMO・RWA方向へ寄ったのは、この反射性への市場の厳しい評価とも読める。</p>
+        </article>
+        <article class="deep-card">
+          <h3>集中流動性の難しさ</h3>
+          <p>Uniswap v3型は資本効率を上げたが、レンジ外リスク、頻繁なリバランス、ガス、MEV、ILをLPへ移した。KyberSwap Elasticの事件やVyper/Curve事件は、高度なAMMほど実装と依存先の脆さが大きいことも示した。</p>
+        </article>
+        <article class="deep-card">
+          <h3>CeFi破綻がDeFiを再評価した</h3>
+          <p>2022年のTerra、Three Arrows、Celsius、FTXなどでカストディ型信用が崩れた後、オンチェーン清算・過剰担保・リアルタイム監査可能性が再評価された。ただしDeFiも完全ではなく、ブリッジ、オラクル、管理鍵、フロントエンド、ガバナンスにリスクを残す。</p>
+        </article>
+      </div>
+      <p class="note" style="margin-top:14px">攻撃史の俯瞰には <a href="https://rekt.news/leaderboard/" target="_blank" rel="noreferrer">Rekt Leaderboard</a> が便利。Euler、Curve/Vyper、KyberSwap、Cream、Harvest、Pickleなど、多くのDeFi事例が時系列で参照できる。</p>
+    </section>
+    </main>
+  <footer><div class="wrap">作成目的: DeFiプロトコル進化の調査・参照用。日付とステータスは市場やドキュメント更新で変わる可能性がある。</div></footer>
+  <script src="assets/defi-data.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>
