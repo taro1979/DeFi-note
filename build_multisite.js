@@ -1764,7 +1764,7 @@ function pageShell(page) {
   <title>${page.title} - DeFi History Atlas</title>
   <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
+<body class="page-${page.nav}">
   <header class="site-header">
     <div class="wrap topbar">
       <a class="brand" href="index.html">DeFi History Atlas</a>
@@ -1781,7 +1781,10 @@ function pageShell(page) {
 }
 
 fs.writeFileSync(path.join(assetsDir, "defi-data.js"), dataJs, "utf8");
-fs.writeFileSync(path.join(assetsDir, "site.css"), css, "utf8");
+const siteCssPath = path.join(assetsDir, "site.css");
+if (!fs.existsSync(siteCssPath)) {
+  fs.writeFileSync(siteCssPath, css, "utf8");
+}
 fs.writeFileSync(path.join(assetsDir, "site.js"), appJs, "utf8");
 
 for (const [filename, page] of Object.entries(pages)) {
