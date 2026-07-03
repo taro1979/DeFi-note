@@ -1,58 +1,64 @@
-# Project Name
+# DeFi Note
 
-このファイルは、このプロジェクトで Claude が判断と実装を行うための最上位ガイドです。
-最初に `TEMPLATE_SETUP.md` を埋め、その後このファイルをプロジェクト固有の内容に更新してください。
+このリポジトリは、DeFi の歴史、主要プロトコル、カテゴリ、調査メモを静的 HTML と JavaScript でまとめるサイトです。
 
-## 読み方ガイド
+## プロジェクト概要
 
-| やりたいこと | まず読む | 次に読む |
-|---|---|---|
-| 全体像を掴む | `CLAUDE.md` | `docs/architecture.md` |
-| 新機能を実装する | `spec/` の該当仕様 | `docs/architecture.md` |
-| 次のタスクを探す | `todo.md` | `docs/domain/phase-roadmap.md` |
-| ローカル開発 | `docs/local-dev.md` | `package.json` |
-| ドメイン理解 | `docs/domain/business-model.md` | `docs/domain/data-model.md` |
+- 公開サイトは GitHub Pages で配信する想定です。
+- 主要ページはリポジトリ直下の HTML ファイルです。
+- 共通データ、スタイル、クライアント側スクリプトは `assets/` にあります。
+- `build_multisite.js` はサイト生成・更新用の Node.js スクリプトです。
 
-## リポジトリ構成
+## 主要ファイル
 
-以下は例です。実際の構成に合わせて更新してください。
-
-```text
-src/        アプリケーション本体
-app/        Web / API エントリポイント
-packages/   共有ライブラリやモジュール
-scripts/    開発・運用スクリプト
-docs/       プロジェクト知識ベース
-```
-
-## docs/ の役割
-
-| ファイル | 役割 |
+| パス | 役割 |
 |---|---|
-| `docs/architecture.md` | アーキテクチャマップ。レイヤー、依存方向、主要フロー |
-| `todo.md` | 唯一のタスク管理ソース |
-| `spec/` | 機能仕様書 |
-| `docs/domain/` | ビジネスルール、データモデル、Phase 計画 |
-| `docs/local-dev.md` | ローカル開発手順 |
+| `index.html` | トップページ |
+| `defi_timeline.html` | DeFi 年表の詳細ページ |
+| `timeline.html` | 年表ナビゲーション |
+| `protocols.html` | プロトコル一覧 |
+| `categories.html` | カテゴリ一覧 |
+| `sources.html` | 参考情報・出典 |
+| `deep-research.html` | 詳細調査メモ |
+| `research-method.html` | 調査方法 |
+| `underworld.html` | リスク・事件・裏側の解説 |
+| `assets/defi-data.js` | サイトで利用する DeFi データ |
+| `assets/site.css` | 共通スタイル |
+| `assets/site.js` | 共通のクライアント側処理 |
+| `build_multisite.js` | HTML 生成・更新用スクリプト |
 
-## 標準コマンド
+## 作業方針
 
-移植先の `package.json` に合わせてこのセクションを更新してください。
+- 既存の静的サイト構成を維持し、不要なフレームワークは追加しないでください。
+- 表示文言、データ、出典を変更した場合は、関連ページ間で矛盾が出ないように確認してください。
+- DeFi の事実関係、日付、現在のプロトコル状況を扱う場合は、最新情報を確認してください。
+- API キー、ウォレット秘密鍵、シードフレーズ、未公開メモなどの機密情報はコミットしないでください。
+- 大きな構成変更をする場合は、先に `README.md` とこのファイルを更新してください。
+
+## ローカル確認
+
+このサイトは静的 HTML なので、基本的には `index.html` をブラウザで開けば確認できます。
+ローカルサーバーで確認する場合は、次のように実行できます。
 
 ```bash
-pnpm dev          # 開発サーバー
-pnpm build        # 本番ビルド
-pnpm test         # テスト
-pnpm check        # 型チェック
-pnpm format       # Biome フォーマット
-pnpm lint         # Biome + Oxlint リント
-pnpm lint:fix     # リント自動修正
+python -m http.server 8000
 ```
 
-## Critical Rules
+その後、ブラウザで `http://localhost:8000/` を開いてください。
 
-- 実装前に `docs/architecture.md` と `spec/` の関連仕様を読む
-- 仕様やスキーマを変更したら、関連ドキュメントも同じ変更で更新する
-- 完了報告前に、存在するテスト・型チェック・ビルドを実行する
-- 秘密情報はハードコードしない
-- 判断を求める時は、案ごとのメリット・デメリットを明示して要約する
+Node.js が利用できる環境では、生成スクリプトを直接実行できます。
+
+```bash
+node build_multisite.js
+```
+
+## GitHub Pages
+
+GitHub Pages は `main` ブランチのリポジトリルートから配信する設定です。
+Pages 用に `.nojekyll` を置いているため、GitHub Pages の Jekyll 処理は無効化されています。
+
+## Claude 利用時の注意
+
+- このプロジェクトには MySQL、Docker、npm パッケージ前提の常時起動処理はありません。
+- `.claude/settings.json` は静的 HTML プロジェクト向けに、秘密情報チェック中心の hook 構成にしています。
+- `.claude/skills/` と `.claude/rules/` はテンプレート由来の補助ルールです。必要に応じてこのリポジトリ向けに調整してください。
